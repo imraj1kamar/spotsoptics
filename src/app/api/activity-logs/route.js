@@ -1,5 +1,5 @@
 // app/api/activity-logs/route.js
-import { GET as getLogsHandler, POST as postLogsHandler } from '../audit/logs/route';
+import { prisma } from '@/lib/prisma';
 
 export async function GET(request) {
   return getLogsHandler(request);
