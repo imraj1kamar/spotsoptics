@@ -49,8 +49,6 @@ try {
 
 export const prisma = clientInstance || dummyPrismaProxy;
 
-if (process.env.NODE_ENV !== 'production' && prisma && prisma !== dummyPrismaProxy) {
+if (process.env.NODE_ENV !== 'production') {
   globalForPrisma.prisma = prisma;
 }
-
-export default prisma;
