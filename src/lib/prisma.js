@@ -1,10 +1,10 @@
 import { PrismaClient } from '@prisma/client';
 
-const globalForPrisma = global;
+const globalForPrisma = globalThis;
 
 function createPrismaClient() {
   if (!process.env.DATABASE_URL) {
-    return null;
+    return new PrismaClient();
   }
 
   try {
@@ -17,16 +17,17 @@ function createPrismaClient() {
     const adapter = new PrismaMariaDb(pool);
     return new PrismaClient({ adapter });
   } catch (err) {
-    console.error('Failed to create Prisma driver adapter:', err.message);
-    return null;
+    // Fallback to standard PrismaClient if driver adapter fails
+    return new PrismaClient();
   }
 }
 
-// Fallback proxy to ensure model methods like prisma.user.findUnique exist if DB is offline
+// Fallback proxy to ensure model methods exist if DB is offline or during build evaluation
 const dummyPrismaProxy = new Proxy(
   {},
   {
-    get(_target, _prop) {
+    get(_target, prop) {
+      if (prop === 'then') return undefined;
       return new Proxy(
         {},
         {
@@ -39,8 +40,14 @@ const dummyPrismaProxy = new Proxy(
   }
 );
 
-export const prisma =
-  globalForPrisma.prisma || createPrismaClient() || dummyPrismaProxy;
+let clientInstance;
+try {
+  clientInstance = globalForPrisma.prisma || createPrismaClient();
+} catch (e) {
+  clientInstance = dummyPrismaProxy;
+}
+
+export const prisma = clientInstance || dummyPrismaProxy;
 
 if (process.env.NODE_ENV !== 'production' && prisma && prisma !== dummyPrismaProxy) {
   globalForPrisma.prisma = prisma;
