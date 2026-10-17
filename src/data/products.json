@@ -35,11 +35,11 @@
                         },
                         {
                             "label": "Accuracy",
-                            "value": "λ/80"
+                            "value": "λ/60"
                         },
                         {
                             "label": "Repeatability",
-                            "value": "λ/1200"
+                            "value": "λ/1000"
                         },
                         {
                             "label": "Speed",
@@ -82,7 +82,7 @@
                     "specifications": [
                         {
                             "label": "Resolution",
-                            "value": "1024 x 1024"
+                            "value": "75 x 75"
                         },
                         {
                             "label": "Wavelength Range",
@@ -110,7 +110,7 @@
                     "specifications": [
                         {
                             "label": "Resolution",
-                            "value": "640 x 512"
+                            "value": "35 x 35 spots, 60 x 60 spots"
                         },
                         {
                             "label": "Wavelength Range",
