@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 
@@ -52,19 +52,77 @@ function AllProductsContent() {
   const nextProduct = items[nextIndex];
 
   const productFamily = singleProduct?.productFamily || singleProduct?.product_family || [];
-  let activeVariantSpecs = [];
 
-  if (productFamily.length > 0) {
-    const activeFamily = productFamily.find((f) => f.active && f.specifications?.length > 0);
-    if (activeFamily) {
-      activeVariantSpecs = activeFamily.specifications;
+  const defaultFamilyIdx = useMemo(() => {
+    const idx = productFamily.findIndex((item) => item.active);
+    return idx !== -1 ? idx : 0;
+  }, [productFamily]);
+
+  const [selectedFamilyIndex, setSelectedFamilyIndex] = useState(defaultFamilyIdx);
+  const [hasUserChangedFamily, setHasUserChangedFamily] = useState(false);
+
+  // Reset when navigating to another product
+  useEffect(() => {
+    setSelectedFamilyIndex(defaultFamilyIdx);
+    setHasUserChangedFamily(false);
+  }, [productIndex, defaultFamilyIdx]);
+
+  const selectedFamily = productFamily[selectedFamilyIndex] || null;
+
+  // Dynamic specifications based on active family variant
+  const displaySpecs = useMemo(() => {
+    if (selectedFamily?.specifications?.length > 0) {
+      return selectedFamily.specifications;
     }
-  }
+    return singleProduct?.quickSpecifications || singleProduct?.specifications || [];
+  }, [selectedFamily, singleProduct]);
 
-  const displaySpecs =
-    activeVariantSpecs.length > 0
-      ? activeVariantSpecs
-      : singleProduct?.quickSpecifications || singleProduct?.specifications || [];
+  // Compute dynamic features based on selected family specifications
+  const dynamicFeatures = useMemo(() => {
+    const baseFeatures = singleProduct?.features || [];
+    if (!hasUserChangedFamily || !selectedFamily?.specifications?.length) {
+      return baseFeatures;
+    }
+
+    const specs = selectedFamily.specifications || [];
+    const findSpec = (label) => {
+      const item = specs.find(
+        (s) => s.label && s.label.trim().toLowerCase() === label.toLowerCase()
+      );
+      return item ? item.value : null;
+    };
+
+    const accuracyVal = findSpec('Accuracy');
+    const repeatabilityVal = findSpec('Repeatability');
+    const wavelengthVal = findSpec('Wavelength Range');
+
+    return baseFeatures.map((feat) => {
+      if (typeof feat !== 'string') return feat;
+      let text = feat;
+
+      // 1. Repeatability & Accuracy update
+      if (accuracyVal && repeatabilityVal && /repeatability.*?accuracy/i.test(text)) {
+        text = text.replace(
+          /((?:high\s+)?repeatability\s*)\([^)]*\)(\s*and\s*accuracy\s*)\([^)]*\)/i,
+          `$1(${repeatabilityVal})$2(${accuracyVal})`
+        );
+      } else if (accuracyVal && /accuracy\s*\([^)]*\)/i.test(text)) {
+        text = text.replace(/(accuracy\s*)\([^)]*\)/i, `$1(${accuracyVal})`);
+      } else if (repeatabilityVal && /repeatability\s*\([^)]*\)/i.test(text)) {
+        text = text.replace(/(repeatability\s*)\([^)]*\)/i, `$1(${repeatabilityVal})`);
+      }
+
+      // 2. Wavelength Range update
+      if (wavelengthVal && /wavelength\s*range\s*\([^)]*\)/i.test(text)) {
+        text = text.replace(
+          /((?:large\s+)?wavelength\s*range\s*)\([^)]*\)/i,
+          `$1(${wavelengthVal})`
+        );
+      }
+
+      return text;
+    });
+  }, [singleProduct?.features, selectedFamily, hasUserChangedFamily]);
 
   const productSchema = singleProduct
     ? {
@@ -122,6 +180,11 @@ function AllProductsContent() {
                   specifications={displaySpecs}
                   applications={singleProduct.applications || []}
                   show_thumbnails={false}
+                  selectedFamilyIndex={selectedFamilyIndex}
+                  onFamilyChange={(index) => {
+                    setSelectedFamilyIndex(index);
+                    setHasUserChangedFamily(true);
+                  }}
                 />
 
                 <div className="product-detail-content">
@@ -143,7 +206,7 @@ function AllProductsContent() {
                   </p>
 
                   <ProductFeatures
-                    features={singleProduct.features || []}
+                    features={dynamicFeatures}
                     className="mb-4"
                   />
 

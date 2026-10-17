@@ -6,6 +6,7 @@ import CookieConsent from "@/components/CookieConsentClient";
 import Preloader from "@/components/common/Preloader";
 import ScrollToTop from "@/components/common/ScrollToTop";
 import Chatbot from "@/components/common/Chatbot";
+import QuoteModal from "@/components/common/QuoteModal";
 import Navbar from "@/components/layout/Navbar";
 import FooterSection from "@/components/layout/FooterSection";
 
@@ -31,6 +32,7 @@ export default function AppShell({ children }) {
       <FooterSection />
       <ScrollToTop />
       <Chatbot />
+      <QuoteModal />
     </>
   );
 }

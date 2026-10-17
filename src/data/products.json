@@ -7,7 +7,7 @@
             "id" : "omi-test-in-single-pass",
             "name": "OMI: Test in Single Pass",
             "image": "assets/images/products/1.png",
-            "description": "High resolution sensors for wavefront measurement and analysis. \n\nAvailable lenslet arrays: Pitch: 0.15,0.3,0.5 mm, Focal lengths: 7-41 mm (*)",
+            "description": "High resolution sensors for wavefront measurement and analysis. \n\nAvailable lenslet arrays: Pitch: 0.15,0.2,0.3,0.5 mm, Focal lengths: 7-41 mm (*)",
             "features": [
                 "Metrology in transmission (single pass) of lasers and optical elements",
                 "Large wavelength range (DUV, Vis, SWIR, MWIR and LWIR)",
@@ -30,7 +30,7 @@
                         },
                         {
                             "label": "Wavelength Range",
-                            "value": "Vis - SWIR",
+                            "value": "Vis - NIR",
                             "graph": "assets/graphs/product/omi-duv-hr.png"
                         },
                         {
@@ -58,7 +58,7 @@
                         },
                         {
                             "label": "Wavelength Range",
-                            "value": "DUV - LWIR",
+                            "value": "Vis - NIR",
                             "graph": "assets/graphs/product/OMI-DUV-VIS-NIR.png"
                         },
                         {
@@ -86,7 +86,7 @@
                         },
                         {
                             "label": "Wavelength Range",
-                            "value": "DUV - LWIR",
+                            "value": "UV-Vis-NIR",
                             "graph": "assets/graphs/product/omi-uv.png"
                         },
                         {
@@ -114,7 +114,7 @@
                         },
                         {
                             "label": "Wavelength Range",
-                            "value": "SWIR - MWIR",
+                            "value": "SWIR",
                             "graph": "assets/graphs/product/omi-uv-vis-nir.jpeg"
                         },
                         {
@@ -687,7 +687,7 @@
        {
     "id": "sfera-and-stella-off-axis-motorized",
     "name": "Sfera & Stella: Off-axis Motorized",
-    "image": "assets/images/products/7.png",
+    "image": "assets/images/products/7.tif",
     "description": "On-axis and off-axis motorized metrology solutions for precise transmission testing, featuring high-accuracy encoders, macro-defined field positions, and automatic scanning.",
     "features": [
         "Test in transmission (single pass) with an in-built calibration unit",

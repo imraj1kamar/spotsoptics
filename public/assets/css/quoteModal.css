@@ -1,0 +1,291 @@
+/* ==========================================================================
+   SpotOptics - Slide-In Technical Quote Enquiry Modal (Refined Sleek Theme)
+   ========================================================================== */
+
+.quote-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Backdrop Blur */
+.quote-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100000;
+}
+
+/* Modal Scroll Container */
+.quote-modal-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 100001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+/* Centered Modal Dialog — Sliding from Right */
+.quote-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.3),
+              0 0 0 1px rgba(41, 147, 139, 0.15);
+  overflow: hidden;
+  margin: auto;
+  pointer-events: auto;
+}
+
+/* Top Optical Gradient Accent Bar */
+.quote-modal-accent-bar {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--secondary-blue, #33AA99) 0%, var(--primary-blue, #29938B) 50%, #0d9488 100%);
+}
+
+/* Close Button */
+.quote-modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.quote-modal-close-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  transform: rotate(90deg) scale(1.05);
+}
+
+/* Header */
+.quote-modal-header {
+  padding: 16px 52px 12px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.quote-target-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: rgba(41, 147, 139, 0.12);
+  color: var(--primary-blue, #29938B);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-brand-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #0f172a;
+}
+
+.quote-hq-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.2px;
+}
+
+.quote-modal-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-top: 6px;
+  margin-bottom: 3px;
+  letter-spacing: -0.01em;
+}
+
+.quote-modal-subtitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #64748b;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+/* Body */
+.quote-modal-body {
+  padding: 16px 22px 20px 22px;
+}
+
+/* Labels & Inputs — Clean & Light */
+.quote-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 4px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.quote-input-icon {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-right: none;
+  color: #94a3b8;
+  border-radius: 6px 0 0 6px;
+  padding: 0.35rem 0.65rem;
+}
+
+.quote-input {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 7px 11px;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #0f172a;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+}
+
+.input-group > .quote-input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.quote-input:focus {
+  border-color: var(--primary-blue, #29938B);
+  box-shadow: 0 0 0 2px rgba(41, 147, 139, 0.15);
+  background-color: #ffffff;
+  outline: none;
+}
+
+.quote-input::placeholder {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+select.quote-input {
+  font-size: 0.82rem;
+  font-weight: 400;
+  padding: 7px 11px;
+}
+
+textarea.quote-input {
+  resize: vertical;
+  min-height: 75px;
+  line-height: 1.45;
+}
+
+/* Form Footer & Buttons */
+.quote-form-footer {
+  border-color: #f1f5f9 !important;
+}
+
+.quote-security-text {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.quote-form-footer .btn {
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  padding: 7px 16px !important;
+  letter-spacing: 0.15px;
+  border-radius: 6px;
+}
+
+/* Success Screen */
+.quote-success-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(41, 147, 139, 0.15) 0%, rgba(52, 211, 153, 0.25) 100%);
+  color: var(--primary-blue, #29938B);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(41, 147, 139, 0.2);
+}
+
+.quote-success-title {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.quote-success-desc {
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.quote-target-info-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid var(--primary-blue, #29938B);
+  border-radius: 6px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.78rem;
+}
+
+.quote-target-email {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--primary-blue, #29938B);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .quote-modal-wrapper {
+    padding: 0.5rem;
+    align-items: flex-end;
+  }
+
+  .quote-modal-dialog {
+    max-width: 100%;
+    border-radius: 14px 14px 0 0;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+
+  .quote-modal-header {
+    padding: 16px 16px 10px 16px;
+  }
+
+  .quote-modal-title {
+    font-size: 1.05rem;
+  }
+
+  .quote-modal-body {
+    padding: 14px 16px 18px 16px;
+  }
+}

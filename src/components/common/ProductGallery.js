@@ -57,9 +57,9 @@ export default function ProductGallery({
   applications = [],
   className = '',
   show_thumbnails = true,
+  selectedFamilyIndex: externalFamilyIndex,
+  onFamilyChange,
 }) {
-
-console.log(specifications);
 
   // Normalize gallery images list
   const rawGalleryImages = images && images.length > 0 ? images : image ? [image] : [];
@@ -71,10 +71,24 @@ console.log(specifications);
 
   // State for selected product family variant
   const [selectedFamilyIndex, setSelectedFamilyIndex] = useState(
-    product_family.findIndex((item) => item.active) !== -1
+    externalFamilyIndex !== undefined
+      ? externalFamilyIndex
+      : product_family.findIndex((item) => item.active) !== -1
       ? product_family.findIndex((item) => item.active)
       : 0
   );
+
+  // Keep in sync if controlled externally
+  React.useEffect(() => {
+    if (externalFamilyIndex !== undefined && externalFamilyIndex !== selectedFamilyIndex) {
+      setSelectedFamilyIndex(externalFamilyIndex);
+      const fam = product_family[externalFamilyIndex];
+      if (fam?.image) {
+        const normalized = normalizeImageSrc(fam.image);
+        if (normalized) setCurrentImage(normalized);
+      }
+    }
+  }, [externalFamilyIndex, product_family]);
 
   // Dynamic specifications based on active family variant
   const currentSpecs =
@@ -91,9 +105,12 @@ console.log(specifications);
     setActiveThumbIndex(index);
   };
 
-// Handle Product Family variant switch
+  // Handle Product Family variant switch
   const handleFamilyClick = (index, family) => {
     setSelectedFamilyIndex(index);
+    if (onFamilyChange) {
+      onFamilyChange(index, family);
+    }
     const normalized = normalizeImageSrc(family.image);
     if (normalized) {
       setCurrentImage(normalized);

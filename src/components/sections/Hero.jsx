@@ -168,7 +168,19 @@ export default function Hero() {
 
                 {heroData?.secondary_cta && (
                   <Link
-                    href={heroData.secondary_cta.url || '#'}
+                    href={heroData.secondary_cta.url || '#quote'}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (typeof window !== 'undefined') {
+                        window.dispatchEvent(
+                          new CustomEvent('open-quote-modal', {
+                            detail: { product: 'Optino - Wavefront Sensor' },
+                          })
+                        );
+                      }
+                    }}
+                    data-trigger-quote="true"
+                    data-product="Optino - Wavefront Sensor"
                     className="btn btn-outline-custom px-2 px-sm-4 py-2 fw-bold d-inline-flex align-items-center justify-content-center gap-1 gap-sm-2 text-nowrap"
                   >
                     <svg
