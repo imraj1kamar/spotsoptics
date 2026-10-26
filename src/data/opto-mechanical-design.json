@@ -3,9 +3,17 @@
     "title": "Opto-mechanical Design",
     "description": "Precision mechanical design and construction for reliable optical instruments.",
     "breadcrumbs": [
-      { "label": "Home", "href": "/" },
-      { "label": "About Us", "href": "/company-profile" },
-      { "label": "Opto-mechanical Design" }
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About Us",
+        "href": "/about-us-spotoptics"
+      },
+      {
+        "label": "Opto-mechanical Design"
+      }
     ]
   },
   "capabilities": {

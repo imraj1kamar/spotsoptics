@@ -18,20 +18,20 @@ export default function sitemap() {
 
   // ── Static pages ──────────────────────────────────────────────────────────
   const staticPages = [
-    { url: baseUrl,                                        priority: 1.0,  changeFrequency: 'weekly'  },
-    { url: `${baseUrl}/wavefront-sensors/`,                priority: 0.95, changeFrequency: 'weekly'  },
-    { url: `${baseUrl}/all-products/`,                     priority: 0.9,  changeFrequency: 'weekly'  },
-    { url: `${baseUrl}/knowledge/`,                        priority: 0.85, changeFrequency: 'weekly'  },
-    { url: `${baseUrl}/applications/`,                     priority: 0.8,  changeFrequency: 'monthly' },
+    { url: baseUrl, priority: 1.0, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/wavefront-sensors/`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/all-products/`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/knowledge/`, priority: 0.85, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/applications/`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${baseUrl}/all-products/wavefront-sensor-software`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${baseUrl}/faq/`,                              priority: 0.75, changeFrequency: 'monthly' },
-    { url: `${baseUrl}/accessories/`,                      priority: 0.7,  changeFrequency: 'monthly' },
-    { url: `${baseUrl}/company-profile/`,                  priority: 0.7,  changeFrequency: 'monthly' },
-    { url: `${baseUrl}/technology/`,                       priority: 0.7,  changeFrequency: 'monthly' },
-    { url: `${baseUrl}/contact/`,                          priority: 0.7,  changeFrequency: 'monthly' },
-    { url: `${baseUrl}/downloads/`,                        priority: 0.6,  changeFrequency: 'monthly' },
-    { url: `${baseUrl}/terms-and-conditions/`,             priority: 0.3,  changeFrequency: 'yearly'  },
-    { url: `${baseUrl}/privacy-policy/`,                   priority: 0.3,  changeFrequency: 'yearly'  },
+    { url: `${baseUrl}/faq/`, priority: 0.75, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/accessories/`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/about-us-spotoptics/`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/technology/`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/contact/`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/downloads/`, priority: 0.6, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/terms-and-conditions/`, priority: 0.3, changeFrequency: 'yearly' },
+    { url: `${baseUrl}/privacy-policy/`, priority: 0.3, changeFrequency: 'yearly' },
   ].map(p => ({ ...p, lastModified: now }));
 
   // ── Dynamic product pages (from products.json) ────────────────────────────

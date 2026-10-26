@@ -31,7 +31,7 @@
 - IP tracking, user-agent details, and filterable log history.
 
 ### 7. 🌐 Public Website & Product Catalog
-- SEO-optimized public pages (`/all-products`, `/technology`, `/company-profile`, `/contact`, `/applications`, `/accessories`, `/faq`, `/knowledge`).
+- SEO-optimized public pages (`/all-products`, `/technology`, `/about-us-spotoptics`, `/contact`, `/applications`, `/accessories`, `/faq`, `/knowledge`).
 - Dynamic sitemap (`sitemap.js`), `manifest.js`, and `robots.js`.
 
 ---

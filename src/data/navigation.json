@@ -78,11 +78,11 @@
     },
     {
       "title": "Company",
-      "url": "/company-profile",
+      "url": "/about-us-spotoptics",
       "children": [
         {
           "title": "About SpotOptics",
-          "url": "/company-profile"
+          "url": "/about-us-spotoptics"
         },
         {
           "title": "Our Technology",
