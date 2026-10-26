@@ -79,7 +79,7 @@ export default function Cta() {
                 {/* Secondary Button */}
                 {cta.secondary_button?.label && (
                   <Link
-                    href={cta.secondary_button.url || "/applications"}
+                    href={cta.secondary_button.url || "/applications-for-research-and-industry"}
                     className="btn tech-btn-outline"
                   >
                     {cta.secondary_button.label}

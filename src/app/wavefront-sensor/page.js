@@ -596,14 +596,14 @@ export default function WavefrontSensorsPage() {
                   icon: '🚗',
                   title: 'HUD & Automotive Optics',
                   desc: 'Wavefront aberration testing of Head-Up Display projection lenses, automotive camera modules, and ADAS optical assemblies.',
-                  link: '/applications?app=head-up-display-test',
+                  link: '/applications-for-research-and-industry?app=head-up-display-test',
                   anchor: 'HUD Testing Guide',
                 },
                 {
                   icon: '🔭',
                   title: 'Telescope Active Optics & Alignment',
                   desc: 'Active optics and real-time alignment of astronomical telescope primary and secondary mirrors (active since ESO NTT 1989).',
-                  link: '/applications?app=telescope-mirror-test',
+                  link: '/applications-for-research-and-industry?app=telescope-mirror-test',
                   anchor: 'Telescope Alignment Guide',
                 },
                 {

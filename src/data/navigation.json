@@ -44,27 +44,27 @@
     },
     {
       "title": "Applications",
-      "url": "/applications",
+      "url": "/applications-for-research-and-industry",
       "children": [
         {
           "title": "Automotive Optics (HUD Testing)",
-          "url": "/applications?app=head-up-display-test"
+          "url": "/applications-for-research-and-industry?app=head-up-display-test"
         },
         {
           "title": "Ophthalmic Lens Testing",
-          "url": "/applications?app=optino-lens-stress-test"
+          "url": "/applications-for-research-and-industry?app=optino-lens-stress-test"
         },
         {
           "title": "Telescope Metrology",
-          "url": "/applications?app=telescope-mirror-test"
+          "url": "/applications-for-research-and-industry?app=telescope-mirror-test"
         },
         {
           "title": "Digital Camera Lens Testing",
-          "url": "/applications?app=digital-camera-lens-test"
+          "url": "/applications-for-research-and-industry?app=digital-camera-lens-test"
         },
         {
           "title": "All Applications",
-          "url": "/applications"
+          "url": "/applications-for-research-and-industry"
         }
       ]
     },

@@ -63,23 +63,23 @@
       "links": [
         {
           "label": "Automotive Optics",
-          "url": "/applications?app=head-up-display-test"
+          "url": "/applications-for-research-and-industry?app=head-up-display-test"
         },
         {
           "label": "Ophthalmic Optics",
-          "url": "/applications?app=optino-lens-stress-test"
+          "url": "/applications-for-research-and-industry?app=optino-lens-stress-test"
         },
         {
           "label": "Telescope Metrology",
-          "url": "/applications?app=telescope-mirror-test"
+          "url": "/applications-for-research-and-industry?app=telescope-mirror-test"
         },
         {
           "label": "Imaging Systems",
-          "url": "/applications?app=digital-camera-lens-test"
+          "url": "/applications-for-research-and-industry?app=digital-camera-lens-test"
         },
         {
           "label": "All Applications",
-          "url": "/applications"
+          "url": "/applications-for-research-and-industry"
         }
       ]
     },

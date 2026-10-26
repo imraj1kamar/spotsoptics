@@ -130,7 +130,7 @@ appList.forEach((app) => {
     // Agar url "#" ho ya na ho, toh proper application link generate karein
     const appUrl = (app.url && app.url !== '#') 
       ? app.url 
-      : `/applications#${app.id}`; // Ya `/applications/${app.id}`
+      : `/applications-for-research-and-industry#${app.id}`; // Ya `/applications-for-research-and-industry/${app.id}`
 
     addResult(
       title,

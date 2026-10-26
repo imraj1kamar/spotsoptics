@@ -22,7 +22,7 @@ export default function sitemap() {
     { url: `${baseUrl}/wavefront-sensor/`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/all-products/`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/knowledge/`, priority: 0.85, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/applications/`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/applications-for-research-and-industry/`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${baseUrl}/all-products/wavefront-sensor-software`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${baseUrl}/faq/`, priority: 0.75, changeFrequency: 'monthly' },
     { url: `${baseUrl}/accessories/`, priority: 0.7, changeFrequency: 'monthly' },
