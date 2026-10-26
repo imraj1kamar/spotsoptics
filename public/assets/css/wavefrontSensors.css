@@ -1,0 +1,421 @@
+/* ==========================================================================
+   SpotOptics Wavefront Sensors Pillar Page Stylesheet
+   Strictly adheres to globals.css CSS custom properties & theme tokens
+   ========================================================================== */
+
+.wfs-page-wrapper {
+  color: var(--para-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   1. HERO SECTION & STATS
+   ========================================== */
+.wfs-hero-card {
+  background: linear-gradient(135deg, var(--heading-text) 0%, #17382c 50%, var(--primary-blue) 120%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(30, 59, 45, 0.15);
+}
+
+.wfs-hero-glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(51, 170, 153, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wfs-hero-title {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+
+.wfs-hero-subtitle {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: var(--fw-medium);
+}
+
+.wfs-hero-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--text-base);
+  line-height: var(--body-line-height);
+  max-width: 680px;
+}
+
+.wfs-hero-stat-box {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 12px 18px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.wfs-hero-stat-box:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+  border-color: var(--secondary-blue);
+}
+
+.wfs-stat-val {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.wfs-stat-lbl {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+/* ==========================================
+   2. SECTION TITLES & HEADINGS
+   ========================================== */
+.wfs-section {
+  padding: 70px 0;
+  position: relative;
+}
+
+.wfs-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: var(--sky-hover);
+  color: var(--primary-blue);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.wfs-section-heading {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: var(--fw-bold);
+  color: var(--heading-text);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  margin-bottom: 12px;
+}
+
+.wfs-section-lead {
+  font-size: var(--text-base);
+  color: var(--para-text);
+  line-height: var(--body-line-height);
+  max-width: 720px;
+}
+
+/* ==========================================
+   3. WORKING PRINCIPLE & COMPARISON CARDS
+   ========================================== */
+.wfs-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 28px;
+  height: 100%;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.wfs-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.wfs-card-active {
+  border-color: var(--primary-blue);
+  background: #ffffff;
+  position: relative;
+}
+
+.wfs-card-active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary-blue), var(--primary-blue));
+  border-radius: 0 0 4px 4px;
+}
+
+.wfs-card-title {
+  color: var(--heading-text);
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 14px;
+}
+
+.wfs-check-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 16px 0 0;
+}
+
+.wfs-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--text-sm);
+  color: var(--para-text);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.wfs-callout-box {
+  background: var(--sky-light);
+  border: 1px solid rgba(41, 147, 139, 0.25);
+  border-left: 5px solid var(--primary-blue);
+  border-radius: 12px;
+  padding: 18px 24px;
+  font-size: var(--text-sm);
+  color: var(--heading-text);
+}
+
+/* ==========================================
+   4. WAVELENGTH BANDS GRID
+   ========================================== */
+.wfs-band-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 22px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.wfs-band-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.wfs-band-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.wfs-band-range {
+  font-size: var(--text-sm);
+  font-weight: var(--fw-bold);
+  color: var(--heading-text);
+  margin-bottom: 8px;
+}
+
+.wfs-band-model {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-color);
+  font-size: var(--text-xs);
+  color: var(--primary-blue);
+  font-weight: var(--fw-bold);
+}
+
+/* ==========================================
+   5. BENCHMARK COMPARISON TABLE
+   ========================================== */
+.wfs-table-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.wfs-table {
+  width: 100%;
+  margin-bottom: 0;
+  border-collapse: collapse;
+}
+
+.wfs-table th,
+.wfs-table td {
+  padding: 16px 20px;
+  vertical-align: middle;
+  font-size: var(--text-sm);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.wfs-table thead th {
+  background: var(--sky-light);
+  color: var(--heading-text);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.wfs-table tbody tr:hover {
+  background-color: rgba(41, 147, 139, 0.03);
+}
+
+.wfs-cell-highlight {
+  color: var(--primary-blue);
+  font-weight: var(--fw-bold);
+  background-color: rgba(41, 147, 139, 0.06);
+}
+
+/* ==========================================
+   6. APPLICATIONS GRID
+   ========================================== */
+.wfs-app-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.wfs-app-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.wfs-app-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--sky-hover);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.wfs-app-title {
+  font-size: 1.15rem;
+  font-weight: var(--fw-bold);
+  color: var(--heading-text);
+  margin-bottom: 10px;
+}
+
+.wfs-app-desc {
+  font-size: var(--text-sm);
+  color: var(--para-text);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+/* ==========================================
+   7. SENSOFT FEATURE BOX
+   ========================================== */
+.wfs-sensoft-box {
+  background: linear-gradient(135deg, var(--sky-light) 0%, #ffffff 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+}
+
+.wfs-sensoft-chip {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 18px;
+  height: 100%;
+  transition: all 0.25s ease;
+}
+
+.wfs-sensoft-chip:hover {
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.wfs-chip-metric {
+  color: var(--primary-blue);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.wfs-chip-title {
+  color: var(--heading-text);
+  font-size: 1.05rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 8px;
+}
+
+/* ==========================================
+   8. FAQ ACCORDION
+   ========================================== */
+.wfs-faq-details {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.wfs-faq-details[open] {
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.wfs-faq-summary {
+  padding: 18px 22px;
+  font-weight: var(--fw-bold);
+  color: var(--heading-text);
+  font-size: var(--text-base);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.wfs-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.wfs-faq-body {
+  padding: 0 22px 20px;
+  color: var(--para-text);
+  font-size: var(--text-sm);
+  line-height: var(--body-line-height);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding-top: 14px;
+}

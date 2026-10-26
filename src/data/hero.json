@@ -6,10 +6,7 @@
     "text": "EXPLORE PRODUCTS",
     "url": "#products"
   },
-  "secondary_cta": {
-    "text": "GET A QUOTE",
-    "url": "#quote"
-  },
+ 
   "image": {
     "url": "assets/images/hero-image.png",
     "alt": "SpotOptics High Performance Wavefront Sensor"

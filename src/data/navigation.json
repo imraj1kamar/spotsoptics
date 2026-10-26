@@ -7,6 +7,32 @@
       "url": "/"
     },
     {
+      "title": "Wavefront Sensors",
+      "url": "/wavefront-sensors",
+      "children": [
+        {
+          "title": "All Wavefront Sensors",
+          "url": "/wavefront-sensors"
+        },
+        {
+          "title": "OMI — Single Pass (DUV–LWIR)",
+          "url": "/all-products/omi-test-in-single-pass"
+        },
+        {
+          "title": "Optino-mu — Pocket Size",
+          "url": "/all-products/optino-mu-pocket-size-single-and-double-pass"
+        },
+        {
+          "title": "Laserino-mu — M² & MTF",
+          "url": "/all-products/laserino-mu-dual-channel-single-pass"
+        },
+        {
+          "title": "SenSoft Software",
+          "url": "/all-products/wavefront-sensor-software"
+        }
+      ]
+    },
+    {
       "title": "Products",
       "url": "/all-products",
       "children": [

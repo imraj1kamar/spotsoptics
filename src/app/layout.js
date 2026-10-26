@@ -26,7 +26,7 @@ export const metadata = {
   },
   description: siteData.site.description,
   alternates: {
-    canonical: '/',
+    // canonical is set per-page via generateMetadata() — do NOT set a global canonical here
   },
   keywords: siteData.site.keywords,
   authors: [{ name: siteData.site.name }],
