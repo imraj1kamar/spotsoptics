@@ -4,6 +4,7 @@ import "./globals.css";
 import siteData from "@/data/site.json"; 
 import AppShell from "@/components/layout/AppShell";
 import ReduxProvider from "@/redux/Providers";
+import { Analytics } from "@vercel/analytics/react"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -113,7 +114,9 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <ReduxProvider>
           <AppShell>{children}</AppShell>
+          
         </ReduxProvider>
+        <Analytics />
       </body>
     </html>
   );
