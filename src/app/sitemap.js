@@ -19,7 +19,7 @@ export default function sitemap() {
   // ── Static pages ──────────────────────────────────────────────────────────
   const staticPages = [
     { url: baseUrl, priority: 1.0, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/wavefront-sensors/`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/wavefront-sensor/`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/all-products/`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/knowledge/`, priority: 0.85, changeFrequency: 'weekly' },
     { url: `${baseUrl}/applications/`, priority: 0.8, changeFrequency: 'monthly' },

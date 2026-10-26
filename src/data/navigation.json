@@ -8,11 +8,11 @@
     },
     {
       "title": "Wavefront Sensors",
-      "url": "/wavefront-sensors",
+      "url": "/wavefront-sensor",
       "children": [
         {
           "title": "All Wavefront Sensors",
-          "url": "/wavefront-sensors"
+          "url": "/wavefront-sensor"
         },
         {
           "title": "OMI — Single Pass (DUV–LWIR)",
