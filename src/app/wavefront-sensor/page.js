@@ -18,6 +18,9 @@ export const metadata = {
   keywords: [
     'wavefront sensor',
     'Shack-Hartmann wavefront sensor',
+    'shack hartmann wavefront sensor',
+    'shack hartmann',
+    'wavefront sensor',
     'optical wavefront measurement',
     'DUV wavefront sensor',
     'LWIR wavefront sensor',
