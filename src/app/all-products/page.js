@@ -1,6 +1,6 @@
 // src/app/all-products/page.js
 import AllProductsCatalogClient from './AllProductsCatalogClient';
-import siteData from '@/data/site.json';
+
 
 // ─── 1. Metadata Export (Server Component) ──────────────────────────────────
 export const metadata = {
