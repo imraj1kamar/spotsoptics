@@ -111,7 +111,7 @@ ${message || 'No additional message provided.'}
     <!-- Footer -->
     <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 18px 32px; font-size: 12px; color: #94a3b8; text-align: center;">
       <p style="margin: 0 0 4px 0;">
-        SpotOptics S.r.l. &middot; Via Turazza 48, 35128 Padova (PD), Italy
+        Shack-Hartmann wavefront sensors &middot; Via Turazza 48, 35128 Padova (PD), Italy
       </p>
       <p style="margin: 0;">
         Phone: +39 049 8078529 &middot; Email: <a href="mailto:contact@spot-optics.com" style="color: ${brandTeal};">contact@spot-optics.com</a> &middot; <a href="https://www.spotoptics.com" style="color: ${brandTeal};">www.spotoptics.com</a>

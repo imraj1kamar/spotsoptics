@@ -264,7 +264,7 @@ export default function QuoteModal() {
                     <div className="quote-target-info-card p-2 p-sm-3 mb-3 text-start">
                       <div className="text-muted mb-1" style={{ fontSize: '0.75rem' }}>Inquiry Destination:</div>
                       <div className="quote-target-email">
-                        SpotOptics S.r.l. &middot; contact@spot-optics.com
+                        Shack-Hartmann wavefront sensors &middot; contact@spot-optics.com
                       </div>
                       <div className="text-muted mt-1" style={{ fontSize: '0.74rem' }}>
                         Via Turazza 48, 35128 Padova (PD), Italy
@@ -440,7 +440,7 @@ export default function QuoteModal() {
 
                     {/* Footer Info & Actions */}
                     <div className="quote-form-footer mt-3 pt-3 border-top d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2">
-                      
+
 
                       <div className="d-flex gap-2 w-100 w-sm-auto justify-content-end">
                         <button

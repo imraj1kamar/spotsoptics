@@ -37,7 +37,7 @@ export const metadata = {
     description:
       'Shack-Hartmann wavefront sensors from 193 nm to 10.6 μm with λ/1000 rms repeatability. OMI, Optino-mu, Laserino-mu and more.',
     url: 'https://www.spotoptics.com/wavefront-sensors/',
-    siteName: 'SpotOptics S.r.l.',
+    siteName: 'Shack-Hartmann wavefront sensors',
     type: 'website',
   },
 };
@@ -140,8 +140,8 @@ const schemaJsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': 'https://www.spotoptics.com/#organization',
-    name: 'SpotOptics S.r.l.',
-    legalName: 'SpotOptics S.r.l.',
+    name: 'Shack-Hartmann wavefront sensors',
+    legalName: 'Shack-Hartmann wavefront sensors',
     description: 'Manufacturer of high-performance Shack-Hartmann wavefront sensors and optical metrology instruments for research, industry, and astronomy. Based in Padova, Italy.',
     url: 'https://www.spotoptics.com',
     logo: { '@type': 'ImageObject', url: 'https://www.spotoptics.com/assets/icons/favicon.png' },
@@ -214,16 +214,16 @@ const sensorProducts = (productsData?.items || []).slice(0, 6);
 
 // ─── Comparison Table Data ───────────────────────────────────────────────────
 const comparisonRows = [
-  { criterion: 'Absolute Accuracy',     sh: 'λ/60 (OMI), λ/40 (SWIR)',        interf: 'λ/100 to λ/500',          winner: 'interf' },
-  { criterion: 'Repeatability (rms)',   sh: 'λ/1000',                           interf: 'λ/1000 – λ/2000',         winner: 'equal'  },
-  { criterion: 'Vibration Immunity',    sh: '✅ Excellent (single-frame)',      interf: '❌ Needs isolation table', winner: 'sh'     },
-  { criterion: 'Wavelength Flexibility',sh: '✅ 193 nm – 10.6 μm',             interf: '❌ Fixed source wavelength',winner: 'sh'    },
-  { criterion: 'Dynamic Range',         sh: '±50λ (tilt subtracted)',           interf: '±λ/4 to ±5λ',             winner: 'sh'     },
-  { criterion: 'Cost',                  sh: '💰 Lower (no reference flat)',     interf: '💰💰 Higher',             winner: 'sh'     },
-  { criterion: 'Setup Complexity',      sh: 'Low — USB3 plug-and-play',         interf: 'High — alignment-critical',winner: 'sh'    },
-  { criterion: 'Calibration',          sh: 'In-situ by user',                   interf: 'Reference flat required',  winner: 'sh'    },
-  { criterion: 'Form Factor',           sh: 'Pocket-size (200 g, Optino-mu)',   interf: 'Bench-top only',           winner: 'sh'    },
-  { criterion: 'Software',             sh: 'SenSoft™ (included)',               interf: 'Vendor-locked',            winner: 'sh'    },
+  { criterion: 'Absolute Accuracy', sh: 'λ/60 (OMI), λ/40 (SWIR)', interf: 'λ/100 to λ/500', winner: 'interf' },
+  { criterion: 'Repeatability (rms)', sh: 'λ/1000', interf: 'λ/1000 – λ/2000', winner: 'equal' },
+  { criterion: 'Vibration Immunity', sh: '✅ Excellent (single-frame)', interf: '❌ Needs isolation table', winner: 'sh' },
+  { criterion: 'Wavelength Flexibility', sh: '✅ 193 nm – 10.6 μm', interf: '❌ Fixed source wavelength', winner: 'sh' },
+  { criterion: 'Dynamic Range', sh: '±50λ (tilt subtracted)', interf: '±λ/4 to ±5λ', winner: 'sh' },
+  { criterion: 'Cost', sh: '💰 Lower (no reference flat)', interf: '💰💰 Higher', winner: 'sh' },
+  { criterion: 'Setup Complexity', sh: 'Low — USB3 plug-and-play', interf: 'High — alignment-critical', winner: 'sh' },
+  { criterion: 'Calibration', sh: 'In-situ by user', interf: 'Reference flat required', winner: 'sh' },
+  { criterion: 'Form Factor', sh: 'Pocket-size (200 g, Optino-mu)', interf: 'Bench-top only', winner: 'sh' },
+  { criterion: 'Software', sh: 'SenSoft™ (included)', interf: 'Vendor-locked', winner: 'sh' },
 ];
 
 // ─── FAQ Data ────────────────────────────────────────────────────────────────
@@ -278,7 +278,7 @@ export default function WavefrontSensorsPage() {
             <div className="wfs-hero-glow" aria-hidden="true" />
             <div className="row align-items-center position-relative z-2">
               <div className="col-lg-8">
-                
+
                 {/* Brand Tagline Badge */}
                 <div className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white bg-opacity-10 text-white border border-white border-opacity-15 mb-3">
                   <span className="hero-pulse-dot" />
@@ -306,9 +306,9 @@ export default function WavefrontSensorsPage() {
                 <div className="row g-3 mb-4">
                   {[
                     { value: 'λ/1000', label: 'rms Repeatability' },
-                    { value: 'λ/60',   label: 'Absolute Accuracy'  },
+                    { value: 'λ/60', label: 'Absolute Accuracy' },
                     { value: '193 nm', label: 'DUV Lithography' },
-                    { value: '10.6 μm',label: 'LWIR CO₂ Testing' },
+                    { value: '10.6 μm', label: 'LWIR CO₂ Testing' },
                   ].map((stat) => (
                     <div className="col-6 col-sm-3" key={stat.label}>
                       <div className="wfs-hero-stat-box">

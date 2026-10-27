@@ -45,10 +45,10 @@ export default function FooterSection() {
     <footer className="footer-section-wrapper pt-5 pb-4 position-relative overflow-hidden" id="footer">
       <div className="footer-bg-glow" />
       <div className="container py-lg-3">
-        
+
         {/* Main Footer Body Grid */}
         <div className="row g-4 g-lg-5 pb-5 text-center text-lg-start">
-          
+
           {/* Brand Info Column */}
           <div className="col-12 col-lg-4">
             <div className="pe-lg-3 text-center text-lg-start">
@@ -99,7 +99,7 @@ export default function FooterSection() {
             <div className="row g-4">
               {columns.map((col, cIdx) => (
                 <div key={cIdx} className="col-6 col-sm-3">
-                
+
                   <h4 className="footer-col-title h6 fw-bold text-white text-uppercase tracking-wider mb-3"> {col.title}</h4>
                   <ul className="list-unstyled footer-nav-list mb-0">
                     {col.links?.map((link, lIdx) => (
@@ -120,7 +120,7 @@ export default function FooterSection() {
         {/* Bottom Legal & Copyright Bar */}
         <div className="footer-bottom-bar pt-4 border-top border-secondary border-opacity-25 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 text-muted small">
           <div>
-            <span>{brand.copyright || '© SpotOptics S.r.l. 2025 All rights reserved.'}</span>
+            <span>{brand.copyright || '© Shack-Hartmann wavefront sensors 2025 All rights reserved.'}</span>
           </div>
 
           <div className="d-flex align-items-center gap-4">
