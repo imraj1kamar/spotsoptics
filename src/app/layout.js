@@ -65,7 +65,10 @@ export const metadata = {
     images: [siteData.site.logo],
   },
   verification: {
-    google: 'zfGMJWWfmqta-PoYRCh0EgMgWcbYelP9cBj4wFcaGcY', 
+    google: [
+      '4eAvwanixZgSbZPPma9WPoZTc_CepI8UvSeE67yzTg4',
+      'zfGMJWWfmqta-PoYRCh0EgMgWcbYelP9cBj4wFcaGcY',
+    ],
   },
 };
 
