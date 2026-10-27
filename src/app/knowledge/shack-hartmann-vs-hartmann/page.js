@@ -349,10 +349,10 @@ export default function ShackHartmannVsHartmannDetailPage({ data }) {
           </div>
 
           <Link
-            href="/contact"
-            className="btn btn-light text-primary-blue  fw-bold px-4 py-2 rounded-pill shadow-sm"
+            href="/wavefront-sensor"
+            className="btn btn-light text-primary-blue fw-bold px-4 py-2 rounded-pill shadow-sm"
           >
-            Request Metrology Consultation →
+            Explore Wavefront Sensors →
           </Link>
         </div>
         </div>

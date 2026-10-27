@@ -16,6 +16,20 @@ const nextConfig = {
     // Regenerate dev chunks on each server start to avoid stale Turbopack output.
     turbopackFileSystemCacheForDev: false,
   },
+  async redirects() {
+    return [
+      {
+        source: '/wavefront-sensors',
+        destination: '/wavefront-sensor',
+        permanent: true,
+      },
+      {
+        source: '/wavefront-sensors/:path*',
+        destination: '/wavefront-sensor/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
