@@ -1,5 +1,6 @@
 // src/app/all-products/page.js
 import AllProductsCatalogClient from './AllProductsCatalogClient';
+import siteData from '@/data/site.json';
 
 // ─── 1. Metadata Export (Server Component) ──────────────────────────────────
 export const metadata = {
@@ -25,7 +26,7 @@ export const metadata = {
     description:
       'Complete catalog of SpotOptics Shack-Hartmann wavefront sensors from DUV (193 nm) to LWIR (10.6 µm) with λ/1000 rms repeatability.',
     url: 'https://www.spotoptics.com/all-products',
-    siteName: 'SpotOptics S.r.l.',
+    siteName: 'Shack-Hartmann wavefront sensors',
     type: 'website',
   },
   twitter: {
@@ -43,8 +44,8 @@ const jsonLdSchema = {
     {
       '@type': 'Organization',
       '@id': 'https://www.spotoptics.com/#organization',
-      name: 'SpotOptics S.r.l.',
-      legalName: 'SpotOptics S.r.l.',
+      name: 'Shack-Hartmann wavefront sensors',
+      legalName: 'Shack-Hartmann wavefront sensors',
       url: 'https://www.spotoptics.com',
       logo: {
         '@type': 'ImageObject',

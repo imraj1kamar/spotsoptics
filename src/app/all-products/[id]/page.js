@@ -60,7 +60,7 @@ export async function generateMetadata({ params }) {
       title: `${product.name} | SpotOptics Wavefront Sensor`,
       description,
       url: canonicalUrl,
-      siteName: 'SpotOptics S.r.l.',
+      siteName: 'Shack-Hartmann wavefront sensors',
       images: [{ url: imageUrl, width: 800, height: 600, alt: product.name }],
       type: 'website',
     },

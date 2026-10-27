@@ -10,7 +10,7 @@ export const metadata = {
     title: 'Shack-Hartmann Wavefront Sensor FAQ | SpotOptics',
     description: 'Answers to the most common engineering questions about Shack-Hartmann wavefront sensors, accuracy, and interferometer comparison.',
     url: 'https://www.spotoptics.com/faq/',
-    siteName: 'SpotOptics S.r.l.',
+    siteName: 'Shack-Hartmann wavefront sensors',
     type: 'website',
   },
 };

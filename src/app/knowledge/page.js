@@ -18,7 +18,7 @@ export const metadata = {
     title: 'Wavefront Sensor Knowledge Corner | SpotOptics',
     description: 'Technical articles on Shack-Hartmann working principle, accuracy, Zernike fitting, and optical metrology best practices.',
     url: 'https://www.spotoptics.com/knowledge/',
-    siteName: 'SpotOptics S.r.l.',
+    siteName: 'Shack-Hartmann wavefront sensors',
     type: 'website',
   },
 };

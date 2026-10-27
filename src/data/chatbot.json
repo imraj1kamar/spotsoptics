@@ -15,7 +15,7 @@
       "spotoptics", "italy", "padova", "where are you located", "what does spotoptics do", 
       "what is spotoptics", "serve", "who is spotoptics", "spotoptics full name"
     ],
-    "answer": "**SpotOptics S.r.l.**\n*\"The software people for optics\"*\n\nSpotOptics S.r.l. is an Italian company based in Padova, specializing in high-performance Shack-Hartmann wavefront sensors and optical metrology systems. We provide advanced solutions for optical testing across various industries including ophthalmic, automotive, aerospace, and general photonics.\n\nFor more information, visit our [Company Profile](/company-profile) page."
+    "answer": "**Shack-Hartmann wavefront sensors**\n*\"The software people for optics\"*\n\nShack-Hartmann wavefront sensors is an Italian company based in Padova, specializing in high-performance Shack-Hartmann wavefront sensors and optical metrology systems. We provide advanced solutions for optical testing across various industries including ophthalmic, automotive, aerospace, and general photonics.\n\nFor more information, visit our [Company Profile](/company-profile) page."
   },
   {
     "intent": "PRODUCT_DISCOVERY",
@@ -148,7 +148,7 @@
   {
     "intent": "WARRANTY_REPAIR",
     "keywords": ["warranty", "repair", "broken", "fix", "maintenance", "service", "guarantee"],
-    "answer": "We provide dedicated technical support, recalibration, and repair services for all our Shack-Hartmann sensors. Please email your instrument's serial number to contact@spot-optics.com or visit our [Contact Page](/contact) for assistance.\n\n**SpotOptics S.r.l.**\n*The software people for optics*\nVia Turazza 48\n35128 Padova, Italy"
+    "answer": "We provide dedicated technical support, recalibration, and repair services for all our Shack-Hartmann sensors. Please email your instrument's serial number to contact@spot-optics.com or visit our [Contact Page](/contact) for assistance.\n\n**Shack-Hartmann wavefront sensors**\n*The software people for optics*\nVia Turazza 48\n35128 Padova, Italy"
   },
   {
     "intent": "KNOWLEDGE_CORNER",
@@ -218,12 +218,12 @@
   {
     "intent": "CONTACT_INFO",
     "keywords": ["phone number", "email", "contact number", "customer care", "support email", "how to call", "reach you", "helpline", "address", "location", "headquarters", "where are you located", "contact"],
-    "answer": "You can reach our technical team directly at **contact@spot-optics.com**.\n\n**SpotOptics S.r.l.**\n*The software people for optics*\nVia Turazza 48\n35128 Padova\nItaly\n\nFor more details, please visit our [Contact Us](/contact) page."
+    "answer": "You can reach our technical team directly at **contact@spot-optics.com**.\n\n**Shack-Hartmann wavefront sensors**\n*The software people for optics*\nVia Turazza 48\n35128 Padova\nItaly\n\nFor more details, please visit our [Contact Us](/contact) page."
   },
   {
     "intent": "DISTRIBUTORS",
     "keywords": ["distributor", "distributors", "dealer", "reseller", "local agent", "where to buy", "sales network", "china", "japan", "korea", "india", "usa", "buy in china", "buy in japan", "buy in korea"],
-    "answer": "Here is the list of our official distributors worldwide:\n\n**🇨🇳 China**\nBeijing Fyne-Tech Co., Ltd\n501-08 room, 5th F, No. 1 Building,\n1st Dishengbei St. Yizhuang Dist., Beijing, China\nEmail: contact@fyne-tech.com\nWeb: www.fyne-tech.com\n\n**🇯🇵 Japan**\nKyokko Tsusho Corporation\nYubinbango 150-0012, Shibuya-ku,\nTokyo Hiroo 1-1-39 Ebisu\nEmail: info@kyokko.com\nWeb: www.kyokko.com\n\n**🇰🇷 Korea**\nSUNJIN TECH\n#912, Centralbiz tower, 260 Changyong-dero,\nYoungtong-gu, Suwon-city, Gyeonggi-do, 16229 Korea\nEmail: jnsseonkim@sj-tech.kr\nWeb: www.sj-tech.kr\n\n**🌍 For all other countries**\n**SpotOptics S.r.l.**\n*The software people for optics*\nVia Turazza 48, 35128 Padova, Italy\nEmail: contact@spot-optics.com You can also find more details on our [Distributors](/contact) page."
+    "answer": "Here is the list of our official distributors worldwide:\n\n**🇨🇳 China**\nBeijing Fyne-Tech Co., Ltd\n501-08 room, 5th F, No. 1 Building,\n1st Dishengbei St. Yizhuang Dist., Beijing, China\nEmail: contact@fyne-tech.com\nWeb: www.fyne-tech.com\n\n**🇯🇵 Japan**\nKyokko Tsusho Corporation\nYubinbango 150-0012, Shibuya-ku,\nTokyo Hiroo 1-1-39 Ebisu\nEmail: info@kyokko.com\nWeb: www.kyokko.com\n\n**🇰🇷 Korea**\nSUNJIN TECH\n#912, Centralbiz tower, 260 Changyong-dero,\nYoungtong-gu, Suwon-city, Gyeonggi-do, 16229 Korea\nEmail: jnsseonkim@sj-tech.kr\nWeb: www.sj-tech.kr\n\n**🌍 For all other countries**\n**Shack-Hartmann wavefront sensors**\n*The software people for optics*\nVia Turazza 48, 35128 Padova, Italy\nEmail: contact@spot-optics.com You can also find more details on our [Distributors](/contact) page."
   },
   {
     "intent": "GENERAL",

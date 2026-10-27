@@ -59,8 +59,8 @@ const schemaJsonLd = {
     {
       '@type': 'Organization',
       '@id': 'https://www.spotoptics.com/#organization',
-      name: 'SpotOptics S.r.l.',
-      legalName: 'SpotOptics S.r.l.',
+      name: 'Shack-Hartmann wavefront sensors',
+      legalName: 'Shack-Hartmann wavefront sensors',
       url: 'https://www.spotoptics.com',
       logo: {
         '@type': 'ImageObject',
