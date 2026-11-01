@@ -1,12 +1,23 @@
 import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
 import { PrismaMariaDb } from '@prisma/adapter-mariadb';
+import { Pool } from 'pg';
 
 const globalForPrisma = globalThis;
 
-// Prisma Client initialization for MySQL via PrismaMariaDb driver adapter
 function createPrismaClient() {
-  const connectionString = process.env.DATABASE_URL;
-  const adapter = new PrismaMariaDb(connectionString);
+  const connectionString = process.env.DATABASE_URL || '';
+
+  let adapter;
+  if (connectionString.startsWith('mysql://') || connectionString.startsWith('mariadb://')) {
+    adapter = new PrismaMariaDb(connectionString);
+  } else {
+    const pool = new Pool({
+      connectionString,
+      ssl: connectionString.includes('sslmode=') ? { rejectUnauthorized: false } : undefined,
+    });
+    adapter = new PrismaPg(pool);
+  }
 
   return new PrismaClient({
     adapter,
