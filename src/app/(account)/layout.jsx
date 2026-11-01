@@ -23,7 +23,7 @@ export default function AccountLayout({ children }) {
 
   // Client-side session protection: Verify JWT session profile via Redux authApi
   useEffect(() => {
-    if (isLoginPage) {
+    if (isLoginPage || (typeof window !== "undefined" && window.__isLoggingOut)) {
       setCheckingAuth(false);
       return;
     }

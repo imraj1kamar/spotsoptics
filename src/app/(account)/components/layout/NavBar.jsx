@@ -22,29 +22,7 @@ export default function NavBar({ onToggleSidebar, isSidebarOpen }) {
   const userMenuRef = useRef(null);
   const notificationRef = useRef(null);
 
-  // Fetch profile via Redux authApi if not present in state
-  useEffect(() => {
-    let isMounted = true;
-    async function fetchProfile() {
-      try {
-        const res = await authApi.getProfile();
-        const userData = res?.data || res?.user || res;
-        if (isMounted && userData && (userData.name || userData.username || userData.email)) {
-          dispatch(setUser(userData));
-        }
-      } catch (err) {
-        console.warn("Failed to fetch user profile via authApi:", err);
-      }
-    }
 
-    if (!currentUser) {
-      fetchProfile();
-    }
-
-    return () => {
-      isMounted = false;
-    };
-  }, [currentUser, dispatch]);
 
   // Extract user details from Redux store currentUser
   const userName = currentUser?.name || currentUser?.username || currentUser?.email || "Admin User";
@@ -88,14 +66,21 @@ export default function NavBar({ onToggleSidebar, isSidebarOpen }) {
   }, []);
 
   const handleLogout = async () => {
+    if (typeof window !== "undefined") {
+      window.__isLoggingOut = true;
+    }
     try {
       await authApi.logout();
     } catch (err) {
-      console.warn("API logout error, completing local Redux session logout", err);
+      // Ignore API logout error if session already cleared
     } finally {
       dispatch(clearUser());
       dispatch(clearMenus());
-      router.replace("/login");
+      if (typeof window !== "undefined") {
+        window.location.replace("/login");
+      } else {
+        router.replace("/login");
+      }
     }
   };
 

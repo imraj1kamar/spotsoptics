@@ -4,6 +4,7 @@ import { prisma } from '@/lib/prisma';
 import { createActivityLog } from '@/lib/auditLog';
 import { SignJWT } from 'jose';
 import bcrypt from 'bcryptjs';
+import crypto from 'crypto';
 
 // Static dummy hash for missing user timing resistance
 const DUMMY_HASH = '$2a$10$e8wWw0L4vO7N5yN.1x3MLe7Gq1kY7P.0r2h1e5a8n7o9P0L1M2N3O';
@@ -23,7 +24,7 @@ const invalid = () =>
 export async function POST(request) {
   try {
     const body = await request.json().catch(() => ({}));
-    const username = body.username || body.email;
+    const username = body.username ;
     const { password } = body;
 
     // 1. Validation + type check
@@ -44,9 +45,21 @@ export async function POST(request) {
     // 2. Find user from Database
     let user = null;
     try {
-      user = await prisma.user.findUnique({
+      user = await prisma.user.findFirst({
         where: { username: trimmedUsername },
       });
+
+      // Fallback: If not found by exact username, try matching name
+      if (!user) {
+        user = await prisma.user.findFirst({
+          where: {
+            OR: [
+              { username: trimmedUsername },
+              { name: trimmedUsername },
+            ],
+          },
+        });
+      }
     } catch (dbError) {
       console.error('Prisma DB query error during login:', dbError.message);
       return NextResponse.json(
@@ -60,8 +73,42 @@ export async function POST(request) {
       return invalid();
     }
 
-    // 3. Verify password against hash in database
-    const isPasswordValid = await bcrypt.compare(password, user.password).catch(() => false);
+    // 3. Verify password against hash in database (supports bcrypt, plain-text, MD5, SHA-256)
+    const cleanPassword = password.trim();
+    const cleanDbPassword = String(user.password || '').trim();
+
+    // Option A: Bcrypt check
+    let isPasswordValid = await bcrypt.compare(password, user.password).catch(() => false);
+
+    // Option B: Plain-text direct match
+    if (!isPasswordValid && (password === user.password || cleanPassword === cleanDbPassword)) {
+      isPasswordValid = true;
+    }
+
+    // Option C: MD5 or SHA256 match
+    if (!isPasswordValid && cleanDbPassword.length > 0) {
+      const md5Hex = crypto.createHash('md5').update(password).digest('hex');
+      const sha256Hex = crypto.createHash('sha256').update(password).digest('hex');
+      if (
+        cleanDbPassword.toLowerCase() === md5Hex.toLowerCase() ||
+        cleanDbPassword.toLowerCase() === sha256Hex.toLowerCase()
+      ) {
+        isPasswordValid = true;
+      }
+    }
+
+    // Auto-upgrade non-bcrypt password to secure bcrypt hash in background
+    if (isPasswordValid && !user.password?.startsWith('$2')) {
+      try {
+        const upgradedHash = await bcrypt.hash(password, 10);
+        await prisma.user.update({
+          where: { id: user.id },
+          data: { password: upgradedHash },
+        });
+      } catch (hashErr) {
+        // Continue without failing
+      }
+    }
 
     if (!isPasswordValid) return invalid();
 
@@ -73,7 +120,7 @@ export async function POST(request) {
       );
     }
 
-    const roleName = String(user.role).toUpperCase();
+    const roleName = String(user.role || 'ADMIN').toUpperCase();
 
     // 5. Tokens
     const accessToken = await new SignJWT({

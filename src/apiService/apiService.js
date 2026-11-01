@@ -29,9 +29,17 @@ axiosInstance.interceptors.response.use(
 
     // Agar token expire ho gaya ho (401 error) aur request pehle retry na hui ho
     if (error.response && error.response.status === 401 && !originalRequest._retry) {
-      
-      // Agar refresh ya login route khud fail ho raha hai, toh loop se bachne ke liye direct reject karein
-      if (originalRequest.url.includes('/auth/refresh') || originalRequest.url.includes('/auth/login')) {
+      const url = originalRequest.url || '';
+      const isAuthRoute =
+        url.includes('/auth/refresh') ||
+        url.includes('/auth/login') ||
+        url.includes('/auth/logout');
+
+      const isLoginPage = typeof window !== 'undefined' && window.location.pathname.startsWith('/login');
+      const isLoggingOut = typeof window !== 'undefined' && window.__isLoggingOut;
+
+      // Agar auth route hai, user logout kar raha hai, ya login page par hai, toh refresh bilkul na karein
+      if (isAuthRoute || isLoginPage || isLoggingOut) {
         return Promise.reject(error);
       }
 

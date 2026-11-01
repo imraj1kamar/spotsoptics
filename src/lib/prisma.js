@@ -1,19 +1,24 @@
 import { PrismaClient } from '@prisma/client';
-import { PrismaPg } from '@prisma/adapter-pg';
-import { Pool } from 'pg';
+import { PrismaMariaDb } from '@prisma/adapter-mariadb';
 
 const globalForPrisma = globalThis;
 
-// Database connection pool setup
-const connectionString = process.env.DATABASE_URL;
-const pool = new Pool({ connectionString });
-const adapter = new PrismaPg(pool);
+// Prisma Client initialization for MySQL via PrismaMariaDb driver adapter
+function createPrismaClient() {
+  const connectionString = process.env.DATABASE_URL;
+  const adapter = new PrismaMariaDb(connectionString);
 
-// Prisma ko adapter ke sath initialize karein
-const prisma = globalForPrisma.prisma || new PrismaClient({ adapter });
+  return new PrismaClient({
+    adapter,
+    log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
+  });
+}
+
+const prisma = globalForPrisma.prisma || createPrismaClient();
 
 if (process.env.NODE_ENV !== 'production') {
   globalForPrisma.prisma = prisma;
 }
 
 export { prisma };
+

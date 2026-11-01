@@ -76,14 +76,21 @@ export default function Sidebar({ isOpen, onClose }) {
   }, [reduxMenus]);
 
   const handleLogout = async () => {
+    if (typeof window !== "undefined") {
+      window.__isLoggingOut = true;
+    }
     try {
       await authApi.logout();
     } catch (err) {
-      console.warn("API logout error, completing local session logout", err);
+      // Ignore API logout error if session already cleared
     } finally {
       dispatch(logoutAction());
       dispatch(clearMenus());
-      router.replace("/login");
+      if (typeof window !== "undefined") {
+        window.location.replace("/login");
+      } else {
+        router.replace("/login");
+      }
     }
   };
 
