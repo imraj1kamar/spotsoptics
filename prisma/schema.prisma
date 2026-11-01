@@ -1,9 +1,11 @@
-generator client {
-  provider = "prisma-client-js"
+datasource db {
+  provider = "postgresql"
 }
 
-datasource db {
-  provider = "mysql"
+// Define custom output path for generated Prisma Client
+generator client {
+  provider = "prisma-client-js"
+  output   = "/app/generated/prisma-client"
 }
 
 // ============================================================
