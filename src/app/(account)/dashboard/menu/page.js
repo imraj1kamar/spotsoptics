@@ -357,23 +357,23 @@ export default function MenuManagementPage() {
     };
 
   return (
-    <div className="container-fluid p-4">
+    <div className="dashboard-main d-flex flex-column gap-4">
       {/* Breadcrumb */}
       <Breadcrumb
         items={[
-          { label: "Dashboard", href: "/dashboard" },
+          
           { label: "Navigation Builder", active: true },
         ]}
       />
 
       {/* Page Title Header */}
-      <div className="d-flex flex-column flex-md-row align-items-md-center justify-content-between my-3 gap-3">
+      <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
         <div>
-          <h2 className="h4 font-weight-bold mb-1 text-dark d-flex align-items-center gap-2">
-            <MenuIcon className="text-primary" size={26} />
+          <h1 className="my-2">
+          
             Sidebar Menu Builder
-          </h2>
-          <p className="text-secondary small mb-0">
+          </h1>
+          <p >
             Configure dynamic navigation links, parent hierarchy, display order, and status toggles for system users.
           </p>
         </div>

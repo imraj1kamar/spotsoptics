@@ -339,13 +339,13 @@ export default function UsersPage() {
   ];
 
   return (
-    <div className="p-4 d-flex flex-column gap-4">
+    <div className="dashboard-main d-flex flex-column gap-4">
       {/* Breadcrumb & Header */}
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
         <div>
-          <Breadcrumb items={[{ label: "Dashboard", href: "/dashboard" }, { label: "User Management" }]} />
-          <h1 className="h4 fw-bold text-dark mb-1 mt-2">User & Role Management</h1>
-          <p className="text-muted small mb-0">
+          <Breadcrumb items={[{ label: "User Management" }]} />
+          <h1 className="my-1">User & Role Management</h1>
+          <p >
             Manage Distributors, Clients, soft-delete statuses, and assign dynamic sidebar menu permissions.
           </p>
         </div>

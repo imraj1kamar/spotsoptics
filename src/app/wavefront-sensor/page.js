@@ -59,8 +59,8 @@ const schemaJsonLd = {
     {
       '@type': 'Organization',
       '@id': 'https://www.spotoptics.com/#organization',
-      name: 'Shack-Hartmann wavefront sensors',
-      legalName: 'Shack-Hartmann wavefront sensors',
+      name: 'SpotOptics S.r.l.',
+      legalName: 'SpotOptics S.r.l.',
       url: 'https://www.spotoptics.com',
       logo: {
         '@type': 'ImageObject',
@@ -542,28 +542,21 @@ export default function WavefrontSensorsPage() {
                   ))}
                 </div>
 
-                {/* CTAs */}
-                <div className="d-flex flex-wrap gap-3">
-                  <Link href="/contact" className="btn btn-primary-custom px-4 py-2" id="hero-cta-quote">
-                    Contact Optical Engineering Team
-                  </Link>
-                  <Link href="/downloads" className="btn btn-outline-custom px-4 py-2 text-white border-white border-opacity-50" id="hero-cta-datasheet">
-                    Request Technical Datasheet
-                  </Link>
-                </div>
+              
               </div>
 
               {/* Hardware Graphic Right Column */}
-              <div className="col-lg-4 text-center d-none d-lg-block">
-                <Image
-                  src="/assets/images/products/1.png"
-                  alt="SpotOptics Shack-Hartmann Wavefront Sensor OMI"
-                  width={340}
-                  height={300}
-                  className="img-fluid drop-shadow"
-                  priority
-                />
-              </div>
+            <div className="col-lg-4 text-center d-none d-lg-block">
+  <Image
+    src="/assets/images/products/1.png"
+    alt="SpotOptics Shack-Hartmann Wavefront Sensor OMI"
+    width={340}
+    height={300}
+    className="img-fluid drop-shadow"
+    style={{ width: "auto", height: "auto" }}
+    priority
+  />
+</div>
             </div>
           </section>
 

@@ -131,13 +131,13 @@ export default function ActivityLogsPage() {
   ];
 
   return (
-    <div className="p-4 d-flex flex-column gap-4">
+    <div className="dashboard-main d-flex flex-column gap-4">
       {/* Header & Breadcrumb */}
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
         <div>
-          <Breadcrumb items={[{ label: "Dashboard", href: "/dashboard" }, { label: "Activity & Audit Logs" }]} />
-          <h1 className="h4 fw-bold text-dark mb-1 mt-2">Activity & Audit Log Tracking</h1>
-          <p className="text-muted small mb-0">
+          <Breadcrumb items={[ { label: "Activity & Audit Logs" }]} />
+          <h1 className="my-2">Activity & Audit Log Tracking</h1>
+          <p >
             Monitor real-time system events, user actions, IP address logs, and security audit trails.
           </p>
         </div>

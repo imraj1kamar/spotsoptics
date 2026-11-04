@@ -1,6 +1,6 @@
 {
   "site": {
-    "name": "Shack-Hartmann wavefront sensors",
+    "name": "SpotOptics S.r.l.",
     "tagline": "High Performance Shack-Hartmann Wavefront Sensors",
     "description": "Shack-Hartmann wavefront sensors specializes in high-performance Shack-Hartmann wavefront sensors, optical metrology instruments, and precision measurement solutions for research, industrial, and astronomical applications across DUV to LWIR wavelengths.",
     "url": "https://www.spotoptics.com",
@@ -10,6 +10,7 @@
     "theme_color": "#1E5EFF",
     "backgroundColor": "#F8FAFC",
     "keywords": [
+      "wavefront sensor",
       "Shack-Hartmann wavefront sensor",
       "optical metrology",
       "wavefront measurement",
@@ -33,7 +34,7 @@
   "organization": {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Shack-Hartmann wavefront sensors",
+    "name": "SpotOptics S.r.l.",
     "description": "Manufacturer of high-performance Shack-Hartmann wavefront sensors and optical metrology instruments for research, industry, and astronomy. Based in Padova, Italy.",
     "url": "https://www.spotoptics.com",
     "logo": "/assets/icons/favicon.png",
@@ -49,12 +50,6 @@
       "addressRegion": "PD",
       "postalCode": "35128",
       "addressCountry": "IT"
-    },
-    "sameAs": [
-      "https://facebook.com/spotoptics",
-      "https://instagram.com/spotoptics",
-      "https://linkedin.com/company/spotoptics",
-      "https://twitter.com/spotoptics"
-    ]
+    }
   }
 }

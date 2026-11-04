@@ -152,13 +152,13 @@ export default function DownloadsPage() {
   ];
 
   return (
-    <div className="p-4 d-flex flex-column gap-4">
+    <div className="dashboard-main d-flex flex-column gap-4">
       {/* Header & Breadcrumb */}
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
         <div>
-          <Breadcrumb items={[{ label: "Dashboard", href: "/dashboard" }, { label: "My Downloads" }]} />
-          <h1 className="h4 fw-bold text-dark mb-1 mt-2">My Software Downloads</h1>
-          <p className="text-muted small mb-0">
+          <Breadcrumb items={[ { label: "My Downloads" }]} />
+          <h1 className="my-2">My Software Downloads</h1>
+          <p >
             Access and download your assigned SpotOptics software packages and calibration suites.
           </p>
         </div>

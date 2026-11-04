@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import "./account.css";
 import Sidebar from "./components/layout/Sidebar";
 import Navbar from "./components/layout/NavBar";
+import Footer from "./components/layout/Footer";
 import { usePathname, useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentUser, setUser, clearUser } from "@/redux/slices/authSlice";
@@ -116,6 +117,7 @@ export default function AccountLayout({ children }) {
         <div className="dashboard-content">
           <Navbar onToggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
           {children}
+          <Footer/>
         </div>
       </div>
     </div>

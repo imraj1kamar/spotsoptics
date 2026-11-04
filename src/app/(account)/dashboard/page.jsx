@@ -331,10 +331,7 @@ export default function DashboardPage() {
         </section>
       </main>
 
-      <footer className="dashboard-footer">
-        <span>© {new Date().getFullYear()} SpotOptics Workspace</span>
-        <span>Built for a clearer view.</span>
-      </footer>
+      
     </>
   );
 }

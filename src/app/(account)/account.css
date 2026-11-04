@@ -619,7 +619,7 @@
   font-size: 9px;
 }
 
-.dashboard-welcome h1 {
+ h1 {
   margin: 9px 0 6px;
   color: #263936;
   font-size: clamp(23px, 2.3vw, 30px);
@@ -632,7 +632,7 @@
   font-size: 18px;
 }
 
-.dashboard-welcome p {
+ p {
   margin-bottom: 0;
   color: #84918d;
   font-size: 12px;

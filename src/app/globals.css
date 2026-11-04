@@ -263,6 +263,7 @@ p {
 .breadcrumb-item + .breadcrumb-item:before{
     color: #091118d6;
 }
+
 /* --- Top Counter Badge --- */
 .knowledge-counter-badge {
   background: #ffffff;
