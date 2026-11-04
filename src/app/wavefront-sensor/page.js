@@ -10,17 +10,19 @@ import '../../../public/assets/css/all-products.css';
 import '../../../public/assets/css/products.css';
 import '../../../public/assets/css/wavefrontSensors.css';
 
-// ─── Static Metadata (<60 char title, target keyword front-loaded, <155 char desc) ──
+// ─── Static Metadata (<60 char title, target keyword front-loaded, <160 char desc) ──
 export const metadata = {
-  title: 'Wavefront Sensors | Shack-Hartmann Metrology | SpotOptics',
+  title: {
+    absolute: 'Wavefront Sensor – Shack-Hartmann Sensors | SpotOptics',
+  },
   description:
-    'Precision Shack-Hartmann wavefront sensors from 193 nm to 10.6 µm. λ/1000 rms repeatability, direct M² & MTF metrology without vibration isolation tables.',
+    'High-precision Shack-Hartmann wavefront sensors from 193 nm to 10.6 µm. λ/1000 rms repeatability, sub-nanometer accuracy & instant M² metrology without tables.',
   keywords: [
     'wavefront sensor',
     'Shack-Hartmann wavefront sensor',
     'shack hartmann wavefront sensor',
     'shack hartmann',
-    'wavefront sensor',
+    'wavefront sensors',
     'optical wavefront measurement',
     'DUV wavefront sensor',
     'LWIR wavefront sensor',
@@ -34,21 +36,30 @@ export const metadata = {
     'Zernike polynomial wavefront reconstruction',
   ],
   alternates: {
-    canonical: 'https://www.spotoptics.com/wavefront-sensor/',
+    canonical: 'https://www.spotoptics.com/wavefront-sensor',
   },
   openGraph: {
-    title: 'Wavefront Sensors | Shack-Hartmann Metrology | SpotOptics',
+    title: 'Wavefront Sensor – Shack-Hartmann Sensors | SpotOptics',
     description:
-      'Precision Shack-Hartmann wavefront sensors from 193 nm to 10.6 µm. λ/1000 rms repeatability, sub-nanometer accuracy, and vibration-immune wavefront metrology.',
-    url: 'https://www.spotoptics.com/wavefront-sensor/',
+      'High-precision Shack-Hartmann wavefront sensors from 193 nm to 10.6 µm. λ/1000 rms repeatability, sub-nanometer accuracy & instant M² metrology without tables.',
+    url: 'https://www.spotoptics.com/wavefront-sensor',
     siteName: 'SpotOptics Optical Metrology',
     type: 'website',
+    images: [
+      {
+        url: 'https://www.spotoptics.com/assets/images/products/1.png',
+        width: 1200,
+        height: 630,
+        alt: 'SpotOptics Shack-Hartmann Wavefront Sensor OMI',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wavefront Sensors | Shack-Hartmann Metrology | SpotOptics',
+    title: 'Wavefront Sensor – Shack-Hartmann Sensors | SpotOptics',
     description:
-      'Precision Shack-Hartmann wavefront sensors from 193 nm to 10.6 µm. λ/1000 rms repeatability, sub-nanometer accuracy, and vibration-immune wavefront metrology.',
+      'High-precision Shack-Hartmann wavefront sensors from 193 nm to 10.6 µm. λ/1000 rms repeatability, sub-nanometer accuracy & instant M² metrology without tables.',
+    images: ['https://www.spotoptics.com/assets/images/products/1.png'],
   },
 };
 
@@ -101,9 +112,9 @@ const schemaJsonLd = {
     },
     {
       '@type': 'CollectionPage',
-      '@id': 'https://www.spotoptics.com/wavefront-sensor/#webpage',
-      url: 'https://www.spotoptics.com/wavefront-sensor/',
-      name: 'Wavefront Sensors | Shack-Hartmann Metrology | SpotOptics',
+      '@id': 'https://www.spotoptics.com/wavefront-sensor#webpage',
+      url: 'https://www.spotoptics.com/wavefront-sensor',
+      name: 'Wavefront Sensor – Shack-Hartmann Sensors | SpotOptics',
       isPartOf: {
         '@type': 'WebSite',
         '@id': 'https://www.spotoptics.com/#website',
@@ -115,7 +126,7 @@ const schemaJsonLd = {
       inLanguage: 'en',
       breadcrumb: {
         '@type': 'BreadcrumbList',
-        '@id': 'https://www.spotoptics.com/wavefront-sensor/#breadcrumb',
+        '@id': 'https://www.spotoptics.com/wavefront-sensor#breadcrumb',
         itemListElement: [
           {
             '@type': 'ListItem',
@@ -127,7 +138,7 @@ const schemaJsonLd = {
             '@type': 'ListItem',
             position: 2,
             name: 'Wavefront Sensors',
-            item: 'https://www.spotoptics.com/wavefront-sensor/',
+            item: 'https://www.spotoptics.com/wavefront-sensor',
           },
         ],
       },
@@ -149,9 +160,9 @@ const schemaJsonLd = {
     },
     {
       '@type': 'ItemList',
-      '@id': 'https://www.spotoptics.com/wavefront-sensor/#itemlist',
+      '@id': 'https://www.spotoptics.com/wavefront-sensor#itemlist',
       name: 'SpotOptics Shack-Hartmann Wavefront Sensor Lineup',
-      url: 'https://www.spotoptics.com/wavefront-sensor/',
+      url: 'https://www.spotoptics.com/wavefront-sensor',
       numberOfItems: 4,
       itemListElement: [
         {
@@ -334,7 +345,7 @@ const schemaJsonLd = {
     },
     {
       '@type': 'FAQPage',
-      '@id': 'https://www.spotoptics.com/wavefront-sensor/#faq',
+      '@id': 'https://www.spotoptics.com/wavefront-sensor#faq',
       mainEntity: [
         {
           '@type': 'Question',
@@ -510,7 +521,7 @@ export default function WavefrontSensorsPage() {
                 </div>
 
                 <h1 className="wfs-hero-title mb-2">
-                  Shack-Hartmann Wavefront Sensors: Sub-Nanometer Optical Metrology from DUV to LWIR
+                  Wavefront Sensor – High-Precision Shack-Hartmann Metrology from DUV to LWIR
                 </h1>
                 <p className="wfs-hero-subtitle mb-3">
                   DUV (193 nm) to LWIR (10.6 μm) — λ/1000 rms Precision, Direct M² &amp; MTF Diagnostics
@@ -546,17 +557,17 @@ export default function WavefrontSensorsPage() {
               </div>
 
               {/* Hardware Graphic Right Column */}
-            <div className="col-lg-4 text-center d-none d-lg-block">
-  <Image
-    src="/assets/images/products/1.png"
-    alt="SpotOptics Shack-Hartmann Wavefront Sensor OMI"
-    width={340}
-    height={300}
-    className="img-fluid drop-shadow"
-    style={{ width: "auto", height: "auto" }}
-    priority
-  />
-</div>
+              <div className="col-lg-4 text-center d-none d-lg-block">
+                <Image
+                  src="/assets/images/products/1.png"
+                  alt="SpotOptics Shack-Hartmann Wavefront Sensor OMI"
+                  width={340}
+                  height={300}
+                  className="drop-shadow"
+                  style={{ maxWidth: '100%', height: 'auto', width: 'auto' }}
+                  priority
+                />
+              </div>
             </div>
           </section>
 
