@@ -4,12 +4,13 @@ import productsData from "@/data/products.json";
 import knowledgeData from "@/data/knowledge.json";
 
 function slugify(value = '') {
-  return String(value)
+ return String(value)
     .toLowerCase()
     .trim()
     .replace(/&/g, 'and')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '') || 'product';
+    .replace(/[^a-z0-9]+/g, '-') 
+    .replace(/\/$/, '') 
+    .replace(/^-+|-+$/g, '') || 'product'; 
 }
 
 export default function sitemap() {

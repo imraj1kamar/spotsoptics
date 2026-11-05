@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  trailingSlash: false,
   allowedDevOrigins: [
     '172.20.10.4',
     '172.20.10.8',
