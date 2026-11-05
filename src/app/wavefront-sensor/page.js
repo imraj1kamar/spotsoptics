@@ -81,12 +81,27 @@ const schemaJsonLd = {
       },
     },
     {
-      '@type': 'WebPage',
+      '@type': 'CollectionPage',
       '@id': 'https://www.spotoptics.com/wavefront-sensor#webpage',
       url: 'https://www.spotoptics.com/wavefront-sensor',
       name: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics',
       description:
         'Technical guide and instrument lineup for SpotOptics Shack-Hartmann wavefront sensors, spanning DUV to LWIR wavelengths.',
+      about: [
+        {
+          '@type': 'Thing',
+          name: 'Wavefront Sensor',
+          sameAs: 'https://en.wikipedia.org/wiki/Wavefront_sensor',
+        },
+        {
+          '@type': 'Thing',
+          name: 'Shack–Hartmann Wavefront Sensor',
+          sameAs: 'https://en.wikipedia.org/wiki/Shack%E2%80%93Hartmann_wavefront_sensor',
+        },
+      ],
+      publisher: {
+        '@id': 'https://www.spotoptics.com/#organization',
+      },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -104,63 +119,6 @@ const schemaJsonLd = {
           },
         ],
       },
-    },
-    {
-      '@type': 'ItemList',
-      '@id': 'https://www.spotoptics.com/wavefront-sensor#itemlist',
-      name: 'SpotOptics Shack-Hartmann Wavefront Sensors Lineup',
-      url: 'https://www.spotoptics.com/wavefront-sensor',
-      numberOfItems: 4,
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          item: {
-            '@type': 'Product',
-            name: 'OMI High-Resolution Shack-Hartmann Wavefront Sensor',
-            url: 'https://www.spotoptics.com/all-products/omi-test-in-single-pass',
-            image: 'https://www.spotoptics.com/assets/images/products/1.png',
-            description: 'Laboratory-grade Shack-Hartmann sensor for single-pass metrology across DUV (193 nm) to LWIR (10.6 µm).',
-            brand: { '@type': 'Brand', name: 'SpotOptics' },
-          },
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          item: {
-            '@type': 'Product',
-            name: 'Optino-mu Ultra-Compact Shack-Hartmann Wavefront Sensor',
-            url: 'https://www.spotoptics.com/all-products/optino-mu-pocket-size-single-and-double-pass',
-            image: 'https://www.spotoptics.com/assets/images/products/2.png',
-            description: 'Pocket-sized (70×25×30 mm, 200 g) dual-mode single and double pass Shack-Hartmann sensor.',
-            brand: { '@type': 'Brand', name: 'SpotOptics' },
-          },
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          item: {
-            '@type': 'Product',
-            name: 'Laserino-mu Dual-Channel Wavefront & Laser Diagnostic Sensor',
-            url: 'https://www.spotoptics.com/all-products/laserino-mu-dual-channel-single-pass',
-            image: 'https://www.spotoptics.com/assets/images/products/4.png',
-            description: 'Dual-channel wavefront sensor with integrated imaging for simultaneous wavefront and laser M² and MTF analysis.',
-            brand: { '@type': 'Brand', name: 'SpotOptics' },
-          },
-        },
-        {
-          '@type': 'ListItem',
-          position: 4,
-          item: {
-            '@type': 'Product',
-            name: 'Puntino Astronomical & Large Optics Wavefront Sensor',
-            url: 'https://www.spotoptics.com/all-products/puntino-dual-channel-for-astronomical-telescopes',
-            image: 'https://www.spotoptics.com/assets/images/products/9.png',
-            description: 'Dual-channel wavefront sensor for telescope collimation, active optics feedback, and Annular Zernike analysis.',
-            brand: { '@type': 'Brand', name: 'SpotOptics' },
-          },
-        },
-      ],
     },
     {
       '@type': 'FAQPage',
