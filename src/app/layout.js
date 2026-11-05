@@ -27,7 +27,7 @@ export const metadata = {
   },
   description: siteData.site.description,
   alternates: {
-    // canonical is set per-page via generateMetadata() — do NOT set a global canonical here
+    canonical: 'https://www.spotoptics.com/wavefront-sensor',
   },
   keywords: siteData.site.keywords,
   authors: [{ name: siteData.site.name }],
