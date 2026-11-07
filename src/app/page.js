@@ -10,7 +10,7 @@ import siteData from "@/data/site.json";
 // ─── 1. Technical SEO Metadata (Homepage) ────────────────────────────────────
 export const metadata = {
   title: {
-    absolute: 'SpotOptics | High-Performance Shack-Hartmann Wavefront Sensors & Metrology',
+    absolute: 'High-Performance Shack-Hartmann Wavefront Sensors & Metrology | SpotOptics',
   },
   description:
     'SpotOptics specializes in precision Shack-Hartmann wavefront sensors, optical metrology instruments, and measurement solutions from DUV (193 nm) to LWIR (10.6 µm).',
@@ -28,7 +28,7 @@ export const metadata = {
     canonical: 'https://www.spotoptics.com',
   },
   openGraph: {
-    title: 'SpotOptics | High-Performance Shack-Hartmann Wavefront Sensors',
+    title: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics ',
     description:
       'Precision optical metrology instruments and Shack-Hartmann wavefront sensors spanning DUV to LWIR wavelengths with λ/1000 rms accuracy.',
     url: 'https://www.spotoptics.com',
@@ -45,7 +45,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SpotOptics | High-Performance Shack-Hartmann Wavefront Sensors',
+    title: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics',
     description:
       'Precision optical metrology instruments and Shack-Hartmann wavefront sensors from DUV to LWIR.',
     images: ['https://www.spotoptics.com/assets/images/hero-image.png'],
