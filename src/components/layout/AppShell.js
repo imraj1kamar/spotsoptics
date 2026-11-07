@@ -1,14 +1,17 @@
 'use client';
 
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import BootstrapClient from "@/components/BootstrapClient";
 import CookieConsent from "@/components/CookieConsentClient";
 import Preloader from "@/components/common/Preloader";
-import ScrollToTop from "@/components/common/ScrollToTop";
-import Chatbot from "@/components/common/Chatbot";
-import QuoteModal from "@/components/common/QuoteModal";
 import Navbar from "@/components/layout/Navbar";
 import FooterSection from "@/components/layout/FooterSection";
+
+// Lazy-load non-critical floating widgets to eliminate 180KB+ unused JS from critical path
+const Chatbot = dynamic(() => import("@/components/common/Chatbot"), { ssr: false });
+const QuoteModal = dynamic(() => import("@/components/common/QuoteModal"), { ssr: false });
+const ScrollToTop = dynamic(() => import("@/components/common/ScrollToTop"), { ssr: false });
 
 export default function AppShell({ children }) {
   const pathname = usePathname();

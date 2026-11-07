@@ -27,7 +27,7 @@ export const metadata = {
   },
   description: siteData.site.description,
   alternates: {
-    canonical: 'https://www.spotoptics.com/wavefront-sensor',
+    canonical: 'https://www.spotoptics.com',
   },
   keywords: siteData.site.keywords,
   authors: [{ name: siteData.site.name }],

@@ -8,8 +8,6 @@ import ProductCard from '@/components/common/ProductCard';
 import Cta from '@/components/common/Cta';
 
 // Theme & Bootstrap Stylesheets
-import '../../../public/assets/css/all-products.css';
-import '../../../public/assets/css/products.css';
 import '../../../public/assets/css/wavefrontSensors.css';
 
 // ─── Technical SEO Metadata (Strict Canonical, Front-Loaded H1 Match) ──────────
@@ -292,6 +290,7 @@ export default function WavefrontSensorPage() {
                   alt="SpotOptics Shack-Hartmann Wavefront Sensor OMI"
                   width={340}
                   height={300}
+                  sizes="(max-width: 991px) 100vw, 340px"
                   className="drop-shadow img-fluid"
                   style={{ maxWidth: '100%', height: 'auto', width: 'auto' }}
                   priority
@@ -409,6 +408,7 @@ export default function WavefrontSensorPage() {
                           alt={product.name || 'SpotOptics Wavefront Sensor'}
                           width={240}
                           height={170}
+                          sizes="(max-width: 576px) 100vw, (max-width: 991px) 50vw, 240px"
                           className="img-fluid object-fit-contain"
                           style={{ maxHeight: '160px', width: 'auto' }}
                         />

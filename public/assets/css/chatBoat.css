@@ -158,7 +158,7 @@
     align-items: center;
     gap: 5px;
     margin: 3px 0 0;
-    color: var(--muted-text);
+    color: #475569; /* WCAG AAA accessible contrast against white */
     font-size: var(--text-xs);
 }
 
@@ -194,11 +194,10 @@
 }
 
 .welcome-kicker {
-     letter-spacing: .16em;
-    color: var(--muted-text);
+    letter-spacing: .16em;
+    color: #475569;
     font-size: 9px;
     font-weight: var(--fw-extrabold);
-    letter-spacing: .16em;
     text-transform: uppercase;
 }
 
@@ -378,7 +377,7 @@
 .chat-footer {
     margin: 0;
     padding: 0 16px 13px;
-    color: var(--muted-text);
+    color: #475569;
     text-align: center;
     font-size: 10px;
 }

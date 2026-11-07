@@ -419,3 +419,10 @@
   border-top: 1px solid rgba(0, 0, 0, 0.04);
   padding-top: 14px;
 }
+
+.hover-primary {
+  transition: color 0.2s ease;
+}
+.hover-primary:hover {
+  color: var(--primary-blue) !important;
+}
