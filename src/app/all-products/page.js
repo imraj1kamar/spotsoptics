@@ -4,7 +4,9 @@ import AllProductsCatalogClient from './AllProductsCatalogClient';
 
 // ─── 1. Metadata Export (Server Component) ──────────────────────────────────
 export const metadata = {
-  title: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics',
+  title: {
+    absolute: 'Optical Metrology Instruments & Wavefront Sensors Catalog | SpotOptics',
+  },
   description:
     'Explore precision Shack-Hartmann wavefront sensors from DUV (193 nm) to LWIR (10.6 µm). Compare OMI, Optino-mu, Laserino-mu, and SenSoft software.',
   keywords: [
@@ -22,16 +24,16 @@ export const metadata = {
     canonical: 'https://www.spotoptics.com/all-products',
   },
   openGraph: {
-    title: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics',
+    title: 'Optical Metrology Instruments & Wavefront Sensors Catalog | SpotOptics',
     description:
       'Complete catalog of SpotOptics Shack-Hartmann wavefront sensors from DUV (193 nm) to LWIR (10.6 µm) with λ/1000 rms repeatability.',
     url: 'https://www.spotoptics.com/all-products',
-    siteName: 'Shack-Hartmann wavefront sensors',
+    siteName: 'SpotOptics',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics',
+    title: 'Optical Metrology Instruments & Wavefront Sensors Catalog | SpotOptics',
     description:
       'Precision Shack-Hartmann wavefront sensors and optical metrology systems from DUV to LWIR. Sub-nanometer repeatability up to λ/1000 rms.',
   },
