@@ -13,7 +13,7 @@ import '../../../public/assets/css/wavefrontSensors.css';
 // ─── Technical SEO Metadata (Strict Canonical, Front-Loaded H1 Match) ──────────
 export const metadata = {
   title: {
-    absolute: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics',
+    absolute: 'Wavefront Sensors | SpotOptics',
   },
   description:
     'Technical guide to Shack-Hartmann wavefront sensors. Explore operating principles, master specifications, and precision metrology from DUV (193 nm) to LWIR (10.6 µm).',
@@ -34,7 +34,7 @@ export const metadata = {
     canonical: 'https://www.spotoptics.com/wavefront-sensor',
   },
   openGraph: {
-    title: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics',
+    title: 'Wavefront Sensors | SpotOptics',
     description:
       'Technical guide to Shack-Hartmann wavefront sensors. Explore operating principles, master specifications, and precision metrology from DUV (193 nm) to LWIR (10.6 µm).',
     url: 'https://www.spotoptics.com/wavefront-sensor',
@@ -51,7 +51,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics',
+    title: 'Wavefront Sensors | SpotOptics',
     description:
       'Technical guide to Shack-Hartmann wavefront sensors. Explore operating principles, master specifications, and precision metrology from DUV (193 nm) to LWIR (10.6 µm).',
     images: ['https://www.spotoptics.com/assets/images/products/1.png'],
@@ -82,7 +82,7 @@ const schemaJsonLd = {
       '@type': 'CollectionPage',
       '@id': 'https://www.spotoptics.com/wavefront-sensor#webpage',
       url: 'https://www.spotoptics.com/wavefront-sensor',
-      name: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics',
+      name: 'Wavefront Sensors | SpotOptics',
       description:
         'Technical guide and instrument lineup for SpotOptics Shack-Hartmann wavefront sensors, spanning DUV to LWIR wavelengths.',
       about: [
@@ -248,7 +248,7 @@ export default function WavefrontSensorPage() {
                   </div>
 
                   <h1 id="hero-heading" className="wfs-hero-title mb-3">
-                    High-Performance Shack-Hartmann Wavefront Sensors
+                    Wavefront Sensors
                   </h1>
 
                   <p className="wfs-hero-subtitle mb-3">
