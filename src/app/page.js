@@ -28,7 +28,7 @@ export const metadata = {
     canonical: 'https://www.spotoptics.com',
   },
   openGraph: {
-    title: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics ',
+    title: 'High-Performance Shack-Hartmann Wavefront Sensors | SpotOptics',
     description:
       'Precision optical metrology instruments and Shack-Hartmann wavefront sensors spanning DUV to LWIR wavelengths with λ/1000 rms accuracy.',
     url: 'https://www.spotoptics.com',
