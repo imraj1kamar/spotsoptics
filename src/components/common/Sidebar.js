@@ -15,7 +15,7 @@ export default function Sidebar({
   return (
     <div className={`sidebar-card card p-3 shadow-sm ${className}`.trim()}>
       {/* Sidebar Heading */}
-      {title && <h4 className="sidebar-title h5 mb-2">{title}</h4>}
+      {title && <h3 className="sidebar-title h5 mb-2">{title}</h3>}
 
       {/* Decorative Divider Line */}
       <div className="sidebar-line border-bottom mb-3" />

@@ -44,7 +44,7 @@
     text-decoration: none;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, gap 0.3s ease;
     flex-shrink: 0;
     padding: 8px 16px;
     border-radius: 50px;
@@ -223,7 +223,7 @@
     font-size: var(--text-xs);
     font-weight: var(--fw-semibold);
     color: var(--para-text);
-    transition: all 0.25s ease;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
     cursor: pointer;
     font-family: inherit;
     line-height: 1.4;
@@ -298,7 +298,7 @@
     text-align: center;
     gap: 6px;
     box-shadow: var(--shadow-sm);
-    transition: all 0.25s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* .quick-spec-card:hover {
@@ -461,8 +461,7 @@ background-image: url('../images/background-image.jpeg');
     letter-spacing: 0.5px;
     text-decoration: none;
     text-transform: uppercase;
-    transition: all 0.3s ease;
-    border: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
 }
 
@@ -734,7 +733,7 @@ background-image: url('../images/background-image.jpeg');
     font-weight: 600;
     text-decoration: none;
     border-radius: 12px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
 }
 
@@ -789,7 +788,7 @@ background-image: url('../images/background-image.jpeg');
     font-size: var(--text-sm);
     font-weight: var(--fw-semibold);
     text-decoration: underline;
-    transition: all 0.25s ease;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .product-brochure-item svg {
@@ -1053,7 +1052,7 @@ object-fit: contain !important;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     z-index: 3;
     box-shadow: var(--shadow-sm);
 }
@@ -1094,7 +1093,7 @@ object-fit: contain !important;
     overflow: hidden;
     background: #FFFFFF;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     flex-shrink: 0;
 }
 

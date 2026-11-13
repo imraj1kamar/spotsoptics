@@ -22,28 +22,28 @@
           {
             "year": "1995",
             "product": "OMI",
-            "image": "assets/images/products/1.png",
+            "image": "/assets/images/products/1.png",
             "description": "Wavefront sensor for testing optical elements and lasers in single pass.",
             "url": "/all-products/omi-test-in-single-pass"
           },
           {
             "year": "1995",
             "product": "Puntino",
-            "image": "assets/images/products/9.png",
+            "image": "/assets/images/products/9.png",
             "description": "Dual channel wavefront sensor for testing astronomical telescopes.",
             "url": "/all-products/puntino-dual-channel-for-astronomical-telescopes"
           },
           {
             "year": "1999",
             "product": "Optino",
-            "image": "assets/images/products/3.png",
+            "image": "/assets/images/products/3.png",
             "description": "Metrology of optical systems in both single pass (transmission) and double pass (reflection) in the visible wavelength region.",
             "url": "all-products/optino-single-and-double-pass"
           },
           {
             "year": "2002",
             "product": "Optino-SWIR",
-            "image": "assets/images/products/5.png",
+            "image": "/assets/images/products/5.png",
             "description": "Metrology of optical systems and lasers in the SWIR (950–1700 nm) wavelength region.",
             "url": "/all-products/optino-single-and-double-pass"
           },
@@ -62,7 +62,7 @@
           {
             "year": "2004",
             "product": "Lentino",
-            "image": "assets/images/products/6.png",
+            "image": "/assets/images/products/6.png",
             "description": "Testing optical systems in parallel light and at focus in single and double pass, with a built-in beam expander for optics up to 25 mm.",
             "url": "/all-products/lentino-and-opal-on-axis-motorized"
           },
@@ -75,21 +75,21 @@
           {
             "year": "2007",
             "product": "Stella",
-            "image": "assets/images/products/7.png",
+            "image": "/assets/images/products/7.png",
             "description": "Off-axis testing of lithography lenses and optical systems, reconstructing aberration maps across the field.",
             "url": "/all-products/sfera-and-stella-off-axis-motorized"
           },
           {
             "year": "2007",
             "product": "Sfera",
-            "image": "assets/images/products/7.png",
+            "image": "/assets/images/products/7.png",
             "description": "Off-axis testing of mobile phone lenses and small lenses, reconstructing aberration maps across the field.",
             "url": "/all-products/sfera-and-stella-off-axis-motorized"
           },
           {
             "year": "2008",
             "product": "OPAL",
-            "image": "assets/images/products/6.png",
+            "image": "/assets/images/products/6.png",
             "description": "Testing optical systems in parallel light and at focus in single and double pass, with a built-in beam expander for optics up to 60 mm.",
             "url": "/all-products/lentino-and-opal-on-axis-motorized"
           },
@@ -102,7 +102,7 @@
           {
             "year": "2010",
             "product": "Contour",
-            "image": "assets/images/products/8.png",
+            "image": "/assets/images/products/8.png",
             "description": "Testing contact lenses.",
             "url": "/all-products/contour-for-contact-lenses"
           },

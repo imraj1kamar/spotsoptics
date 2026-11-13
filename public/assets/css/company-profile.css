@@ -103,7 +103,7 @@
     border-radius: 50%;
     box-shadow: 0 0 0 5px rgba(30, 94, 255, 0.1); /* Soft outer ring */
     z-index: 1;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, background-size 0.3s ease;
 }
 
 
@@ -149,7 +149,7 @@
 .timeline-product-link {
     color: var(--primary-red);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, background-size 0.3s ease;
     background-image: linear-gradient(var(--primary-blue), var(--primary-blue));
     background-position: 0% 100%;
     background-repeat: no-repeat;
