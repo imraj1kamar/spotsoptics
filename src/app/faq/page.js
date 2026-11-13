@@ -1,5 +1,6 @@
-// ─── FAQ Page SEO Metadata (Server Component) ──────────────────────────────
+// ─── FAQ Page SEO Metadata & Schema (Server Component) ──────────────────
 import FaqClient from './FaqClient';
+import faqData from '@/data/faq.json'; // JSON data import karein for dynamic schema
 
 export const metadata = {
   title: 'Shack-Hartmann Wavefront Sensor FAQ | SpotOptics',
@@ -16,5 +17,30 @@ export const metadata = {
 };
 
 export default function FaqPage() {
-  return <FaqClient />;
+  // Dynamically generate Google FAQ Schema from your JSON file
+  const jsonLdSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData?.faqs?.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer, // Google requires plain text or basic HTML here
+      },
+    })) || [],
+  };
+
+  return (
+    <>
+      {/* Google SEO JSON-LD Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+      />
+      
+      {/* Your Existing UI Component */}
+      <FaqClient />
+    </>
+  );
 }

@@ -1,147 +1,109 @@
-'use client';
+import DownloadsPage from './DownloadsClient';
 
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// ─── Technical SEO Metadata ────────────────────────────────────────────────────
+const PAGE_TITLE =
+  'Wavefront Sensor Brochures & Datasheets Download';
+const PAGE_DESCRIPTION =
+  'Download official product brochures, technical datasheets, and SenSoft software manuals for SpotOptics high-precision Shack-Hartmann wavefront sensors.';
 
-// Dynamic Data & Components Import
-import Sidebar from '@/components/common/Sidebar';
-import PageTopBar from '@/components/common/PageTopBar';
-import downloadData from '@/data/download.json';
-import sidebarData from '@/data/sidebar.json';
+export const metadata = {
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    'wavefront sensor brochures',
+    'optical metrology datasheets',
+    'SpotOptics documentation',
+    'Shack-Hartmann sensor datasheet',
+    'SenSoft software manual',
+    'wavefront sensor PDF',
+    'optical metrology brochure download',
+    'SpotOptics product downloads',
+    'wavefront measurement datasheet',
+    'optical sensor technical documentation',
+  ],
+  alternates: {
+    canonical: 'https://www.spotoptics.com/downloads',
+  },
+  openGraph: {
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    url: 'https://www.spotoptics.com/downloads',
+    siteName: 'SpotOptics',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.spotoptics.com/assets/icons/favicon.png',
+        width: 1200,
+        height: 630,
+        alt: 'SpotOptics Wavefront Sensor Brochures & Datasheets',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [
+      'https://www.spotoptics.com/assets/icons/favicon.png',
+    ],
+  },
+};
 
-// CSS Import (Aapki CSS file path)
-import '../../../public/assets/css/all-products.css';
-import '../../../public/assets/css/downloads.css';
+// ─── JSON-LD Structured Data ───────────────────────────────────────────────────
+const downloadsPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  url: 'https://www.spotoptics.com/downloads',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'SpotOptics',
+    url: 'https://www.spotoptics.com',
+  },
+  about: [
+    { '@type': 'Thing', name: 'Wavefront sensor product brochures' },
+    { '@type': 'Thing', name: 'Optical metrology technical datasheets' },
+    { '@type': 'Thing', name: 'SenSoft software documentation' },
+  ],
+};
 
-export default function DownloadsPage() {
-  const page = downloadData?.page || {};
-  const downloads = downloadData?.downloads || [];
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://www.spotoptics.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Downloads',
+      item: 'https://www.spotoptics.com/downloads',
+    },
+  ],
+};
 
-  // GSAP Scroll Animations (Timeline Glow Line & Marker Pop)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-
-      // 1. TIMELINE LINE GLOW EFFECT
-      const timelineContainer = document.querySelector('.vertical-timeline');
-
-      if (timelineContainer && !timelineContainer.querySelector('.timeline-glow-line')) {
-        const glowLine = document.createElement('div');
-        glowLine.className = 'timeline-glow-line';
-        glowLine.style.position = 'absolute';
-        glowLine.style.top = '0';
-        glowLine.style.left = window.innerWidth > 991 ? '20px' : '15px';
-        glowLine.style.width = '4px';
-        glowLine.style.height = '0%';
-        glowLine.style.background = 'var(--primary-blue)';
-        glowLine.style.boxShadow = '0 0 20px 6px var(--secondary-blue)';
-        glowLine.style.borderRadius = '4px';
-        glowLine.style.zIndex = '0';
-
-        timelineContainer.appendChild(glowLine);
-
-        gsap.to(glowLine, {
-          scrollTrigger: {
-            trigger: timelineContainer,
-            start: 'top 60%',
-            end: 'bottom 40%',
-            scrub: 0.5,
-          },
-          height: '100%',
-          ease: 'none',
-        });
-      }
-
-      // 2. TIMELINE MARKER GLOW EFFECT (Dots)
-      const timelineItems = document.querySelectorAll('.timeline-item');
-
-      timelineItems.forEach((item) => {
-        const marker = item.querySelector('.timeline-marker');
-
-        if (marker) {
-          gsap.to(marker, {
-            scrollTrigger: {
-              trigger: item,
-              start: 'top 55%',
-              end: 'bottom 35%',
-              toggleActions: 'play reverse play reverse',
-            },
-            scale: 1.4,
-            boxShadow: '0 0 25px 8px var(--secondary-blue)',
-            backgroundColor: 'var(--primary-blue)',
-            borderColor: '#FFFFFF',
-            duration: 0.5,
-            ease: 'back.out(1.7)',
-          });
-        }
-      });
-    }
-  }, []);
-
+// ─── Server Component Page ─────────────────────────────────────────────────────
+export default function Page() {
   return (
-    <section className="page-section py-5">
-      <div className="container mt-5">
-     
-
-         <PageTopBar
-          breadcrumbs={[
-            { label: 'Home', href: '/' },
-            { label: 'Downloads' },
-          ]}
-         showCounter={true}
-         counterValue={downloads.length || 0}
-        />
-
-        {/* Page Description */}
-        <header className="row mb-5 justify-content-center text-center">
-          <div className="col-lg-10">
-            <p className="page-tagline">{page.description || ''}</p>
-          </div>
-        </header>
-
-        <div className="row">
-          {/* Main Downloads Column (9/12) */}
-          <div className="col-lg-9">
-            <div className="downloads-panel vertical-timeline position-relative">
-              {downloads.map((item, index) => {
-                const fileUrl = item.file
-                  ? item.file.startsWith('/')
-                    ? item.file
-                    : `/${item.file}`
-                  : '#';
-
-                return (
-                  <div key={index} className="custom-glass-card timeline-item">
-                    <div className="timeline-marker" />
-
-                    <div className="download-content">
-                      <h5>{item.title}</h5>
-
-                      <a
-                        href={fileUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {item.button_text}
-                      </a>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Sidebar Column (3/12) */}
-          <div className="col-lg-3 ms-auto pb-1 d-none d-lg-block mt-3">
-            <Sidebar
-              title={sidebarData.title || 'Categories'}
-              links={sidebarData.links || []}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(downloadsPageSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <DownloadsPage />
+    </>
   );
 }

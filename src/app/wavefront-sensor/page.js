@@ -10,16 +10,24 @@ import Cta from '@/components/common/Cta';
 // Theme & Bootstrap Stylesheets
 import '../../../public/assets/css/wavefrontSensors.css';
 
-// ─── Technical SEO Metadata (Strict Canonical, Front-Loaded H1 Match) ──────────
+// ─── Technical SEO Metadata ────────────────────────────────────────────────────
+const PAGE_TITLE = 'Shack-Hartmann Wavefront Sensors & Wavefront Testers | SpotOptics';
+const PAGE_DESCRIPTION =
+  'Shack-Hartmann (Hartmann-Shack) wavefront sensors for wavefront sensing and testing, from DUV 193 nm to LWIR 10.6 µm. Compare OMI, Optino-mu, Laserino-mu and Puntino.';
+
 export const metadata = {
   title: {
-    absolute: 'Wavefront Sensors | SpotOptics',
+    absolute: PAGE_TITLE,
   },
-  description:
-    'Technical guide to Shack-Hartmann wavefront sensors. Explore operating principles, master specifications, and precision metrology from DUV (193 nm) to LWIR (10.6 µm).',
+  description: PAGE_DESCRIPTION,
+  // Note: Google ignores the keywords meta tag. Kept for other crawlers only.
   keywords: [
     'wavefront sensor',
+    'wavefront sensing',
     'Shack-Hartmann wavefront sensor',
+    'Hartmann-Shack sensor',
+    'wavefront tester',
+    'wavefront testing machine',
     'optical metrology',
     'lenslet array',
     'wavefront measurement',
@@ -34,9 +42,8 @@ export const metadata = {
     canonical: 'https://www.spotoptics.com/wavefront-sensor',
   },
   openGraph: {
-    title: 'Wavefront Sensors | SpotOptics',
-    description:
-      'Technical guide to Shack-Hartmann wavefront sensors. Explore operating principles, master specifications, and precision metrology from DUV (193 nm) to LWIR (10.6 µm).',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: 'https://www.spotoptics.com/wavefront-sensor',
     siteName: 'SpotOptics Optical Metrology',
     type: 'website',
@@ -51,14 +58,68 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wavefront Sensors | SpotOptics',
-    description:
-      'Technical guide to Shack-Hartmann wavefront sensors. Explore operating principles, master specifications, and precision metrology from DUV (193 nm) to LWIR (10.6 µm).',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     images: ['https://www.spotoptics.com/assets/images/products/1.png'],
   },
 };
 
-// ─── Schema.org Structured Data (Organization + WebPage + FAQPage) ─────────────
+// ─── FAQ content: single source of truth for the visible FAQ AND the schema ────
+// (Google requires FAQPage markup to match the content visible on the page.)
+const faqItems = [
+  {
+    q: 'What is a wavefront sensor?',
+    a: [
+      'A wavefront sensor is an instrument that measures the shape of a light wavefront and reports how much it deviates from an ideal reference. These deviations are optical aberrations such as defocus, astigmatism, coma and spherical aberration. Wavefront sensing is used to test lenses, lasers, mirrors, windshields and complete optical systems.',
+      'SpotOptics wavefront sensors use the Shack-Hartmann method: a micro-lenslet array and a camera capture the whole wavefront in a single frame, and SenSoft software expands it into Zernike coefficients.',
+    ],
+  },
+  {
+    q: 'What is the difference between Shack-Hartmann and Hartmann-Shack?',
+    a: [
+      'There is no technical difference. Shack-Hartmann and Hartmann-Shack are two names for the same wavefront sensing method. Roland Shack improved the classical Hartmann screen test by replacing the perforated mask with a micro-lenslet array, and the sensor is named after both of them. You will see either word order in papers, datasheets and product listings.',
+    ],
+  },
+  {
+    q: 'What is a wavefront testing machine used for?',
+    a: [
+      'A wavefront testing machine, also called a wavefront tester, measures the optical quality of a component or system in a single acquisition. Typical uses include lens and objective qualification, laser beam and M² analysis, automotive head-up display and windshield inspection, ophthalmic lens testing, and telescope mirror alignment. SpotOptics wavefront testers cover wavelengths from 193 nm to 10.6 µm.',
+    ],
+  },
+  {
+    q: 'Why Choose Shack-Hartmann over Interferometers?',
+    a: [
+      'Independent cross-validation studies against high-resolution Zygo GPIxp HR and Veeco Fizeau interferometers demonstrate that SpotOptics Shack-Hartmann sensors achieve spatial phase agreement within 2 nm rms (approx. λ/300).',
+      'Unlike traditional interferometers, which rely on delicate phase-shifting across multiple temporal frames and are severely susceptible to shop-floor vibrations and thermal air currents, SpotOptics Shack-Hartmann instruments operate via single-frame snapshot slope integration. This delivers complete vibration immunity without pneumatic isolation tables, handles large continuous dynamic ranges up to ±50λ, and operates across broadband spectra from 193 nm to 10.6 µm.',
+    ],
+  },
+  {
+    q: 'How does a Shack-Hartmann sensor achieve higher sensitivity than classical Hartmann screens?',
+    a: [
+      'As documented in our technical knowledge base, the classical Hartmann test placed an opaque perforated screen in front of the optic, causing over 95% light loss and diffuse diffraction spots. Shack-Hartmann technology replaces the opaque mask with a continuous micro-lenslet array in the transferred pupil, concentrating light into high-intensity focal spots. This yields higher signal-to-noise ratios, sub-pixel centroiding precision, and λ/1000 rms measurement repeatability.',
+    ],
+  },
+  {
+    q: 'Can SpotOptics wavefront sensors test optical systems off-axis?',
+    a: [
+      'Yes. SpotOptics wavefront sensors and motorized platforms (such as Stella and Sfera) are engineered to test optical systems both on-axis and off-axis up to ±50°, enabling comprehensive lens aberration qualification, distortion mapping, and field-dependent wavefront analysis.',
+    ],
+  },
+  {
+    q: 'How are SpotOptics sensors applied in Head-Up Display (HUD) and automotive quality control?',
+    a: [
+      'SpotOptics developed automated HUD metrology stations for automotive production lines. The OMI wavefront sensor and SenSoft software interface directly with production line controllers via a closed-loop remote communication module, setting acquisition parameters, measuring optical transmission across windshields, and extracting Zernike coefficients to ensure distortion-free projection.',
+    ],
+  },
+  {
+    q: 'What is SpotOptics heritage in astronomical active optics and telescope mirror testing?',
+    a: [
+      'Shack-Hartmann active optics originated at the ESO 3.5m New Technology Telescope (NTT). SpotOptics instruments such as Puntino apply this astronomical heritage to measure primary mirror support stress and alignment aberrations. Because astronomical telescopes have central obscurations, SenSoft implements Annular Zernike polynomials alongside Standard Zernike and Seidel representations, detecting surface deformations as minute as 268 nm Peak-to-Valley.',
+    ],
+  },
+];
+
+// ─── Schema.org Structured Data (Organization + CollectionPage + FAQPage) ──────
 const schemaJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -82,18 +143,20 @@ const schemaJsonLd = {
       '@type': 'CollectionPage',
       '@id': 'https://www.spotoptics.com/wavefront-sensor#webpage',
       url: 'https://www.spotoptics.com/wavefront-sensor',
-      name: 'Wavefront Sensors | SpotOptics',
+      name: PAGE_TITLE,
       description:
-        'Technical guide and instrument lineup for SpotOptics Shack-Hartmann wavefront sensors, spanning DUV to LWIR wavelengths.',
+        'Technical guide and instrument lineup for SpotOptics Shack-Hartmann (Hartmann-Shack) wavefront sensors and wavefront testers, spanning DUV to LWIR wavelengths.',
       about: [
         {
           '@type': 'Thing',
           name: 'Wavefront Sensor',
+          alternateName: ['Wavefront sensing', 'Wavefront tester'],
           sameAs: 'https://en.wikipedia.org/wiki/Wavefront_sensor',
         },
         {
           '@type': 'Thing',
           name: 'Shack–Hartmann Wavefront Sensor',
+          alternateName: ['Hartmann-Shack sensor', 'Shack-Hartmann sensor'],
           sameAs: 'https://en.wikipedia.org/wiki/Shack%E2%80%93Hartmann_wavefront_sensor',
         },
       ],
@@ -121,40 +184,14 @@ const schemaJsonLd = {
     {
       '@type': 'FAQPage',
       '@id': 'https://www.spotoptics.com/wavefront-sensor#faq',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'Why Choose Shack-Hartmann over Interferometers?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'SpotOptics Shack-Hartmann wavefront sensors deliver measurement precision comparable to interferometers (validated against Zygo and Veeco systems to within 2 nm rms), but operate via single-frame snapshots without requiring costly pneumatic vibration-isolation tables, complex cavity alignment, or strict monochromatic laser sources. They cover a broad wavelength range from 193 nm DUV to 10.6 µm LWIR and offer high dynamic range up to ±50λ.',
-          },
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.a.join(' '),
         },
-        {
-          '@type': 'Question',
-          name: 'How does a Shack-Hartmann wavefront sensor measure optical aberrations?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'A micro-lenslet array positioned at the transferred pupil discretizes the incoming wavefront into sub-apertures. Focal spot displacements on the sensor matrix directly correspond to local phase gradients. SenSoft software reconstructs the full wavefront phase topography using Standard, Annular, or Fringe Zernike polynomials.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Can SpotOptics wavefront sensors test optical systems off-axis?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. SpotOptics wavefront sensors and motorized platforms (such as Stella and Sfera) are engineered to test optical systems both on-axis and off-axis up to ±50°, enabling comprehensive lens aberration qualification, distortion mapping, and field-dependent wavefront analysis.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How are Shack-Hartmann sensors used in Head-Up Display (HUD) and automotive testing?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'As demonstrated in production line systems developed by SpotOptics for automotive tier-1 manufacturers, the OMI sensor coupled with SenSoft operates in a closed loop to extract Zernike coefficients and evaluate optical transmission quality across automotive windshields and projection optics.',
-          },
-        },
-      ],
+      })),
     },
   ],
 };
@@ -181,7 +218,8 @@ export default function WavefrontSensorPage() {
       wavelength: 'DUV – LWIR (193 nm to 10.6 µm)',
       accuracy: 'λ/60 PV (Accuracy) | λ/1000 (Repeatability)',
       speed: 'Up to 50 Hz',
-      application: 'High-resolution transmission testing of lasers & optics; DUV to LWIR multi-band metrology',
+      application:
+        'High-resolution wavefront testing of lasers & optics in transmission; DUV to LWIR multi-band metrology',
       link: '/all-products/omi-test-in-single-pass',
     },
     {
@@ -189,7 +227,8 @@ export default function WavefrontSensorPage() {
       wavelength: 'UV – Vis – NIR (Pocket 70×25×30 mm)',
       accuracy: 'λ/3000 (Zernike) | λ/1000 (RMS Precision)',
       speed: 'Up to 50 Hz',
-      application: 'Portable single & double pass lens metrology; compact OEM & research bench integration',
+      application:
+        'Pocket-size wavefront tester for portable single & double pass lens metrology; compact OEM & research bench integration',
       link: '/all-products/optino-mu-pocket-size-single-and-double-pass',
     },
     {
@@ -205,7 +244,8 @@ export default function WavefrontSensorPage() {
       wavelength: 'Visible to NIR (Dual-camera Cooled CCD/CMOS)',
       accuracy: 'Sub-nanometer Annular Zernike resolution',
       speed: 'f/5 to f/18 dynamic matching',
-      application: 'Astronomical telescope collimation, active optics feedback & primary mirror support stress',
+      application:
+        'Astronomical telescope collimation, wavefront sensing for active optics feedback & primary mirror support stress',
       link: '/all-products/puntino-dual-channel-for-astronomical-telescopes',
     },
   ];
@@ -232,12 +272,12 @@ export default function WavefrontSensorPage() {
             counterLabel="CORE SENSORS"
           />
 
-          {/* ── SECTION 1: THE ULTIMATE GUIDE HERO (WHAT & HOW) ─────────────── */}
+          {/* ── SECTION 1: HERO ─────────────────────────────────────────────── */}
           <section className="wfs-hero-card p-4 p-lg-5 mb-5" aria-labelledby="hero-heading">
             <div className="wfs-hero-glow" aria-hidden="true" />
             <div className="row align-items-center position-relative z-2">
               <div className="col-lg-8">
-                
+
                 {/* Brand Tagline Badge */}
                 <header className="mb-3">
                   <div className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white bg-opacity-10 text-white border border-white border-opacity-15 mb-3">
@@ -248,17 +288,18 @@ export default function WavefrontSensorPage() {
                   </div>
 
                   <h1 id="hero-heading" className="wfs-hero-title mb-3">
-                    Wavefront Sensors
+                    Shack-Hartmann Wavefront Sensors
                   </h1>
 
                   <p className="wfs-hero-subtitle mb-3">
                     DUV (193 nm) to LWIR (10.6 μm) — Sub-Nanometer Phase Accuracy &amp; Modal Reconstruction
                   </p>
-                  
+
                   <div className="hero-accent-line mb-3" />
 
                   <p className="wfs-hero-desc mb-4">
-                    An authoritative engineering reference on precision <strong>Shack-Hartmann wavefront sensing</strong> — covering
+                    An authoritative engineering reference on precision{' '}
+                    <strong>Shack-Hartmann (Hartmann-Shack) wavefront sensing</strong> and wavefront testing — covering
                     sub-aperture spot displacement mechanics, Zernike polynomial expansion, and industrial instrument selection across research,
                     semiconductor lithography, automotive HUD validation, and astronomical active optics.
                   </p>
@@ -287,7 +328,7 @@ export default function WavefrontSensorPage() {
               <div className="col-lg-4 text-center d-none d-lg-block">
                 <Image
                   src="/assets/images/products/1.png"
-                  alt="SpotOptics Shack-Hartmann Wavefront Sensor OMI"
+                  alt="SpotOptics OMI Shack-Hartmann wavefront sensor"
                   width={340}
                   height={300}
                   sizes="(max-width: 991px) 100vw, 340px"
@@ -299,20 +340,50 @@ export default function WavefrontSensorPage() {
             </div>
           </section>
 
+          {/* ── NEW SECTION: WHAT IS A WAVEFRONT SENSOR (DEFINITION) ────────── */}
+          <section className="mb-5 pb-3" id="what-is-a-wavefront-sensor" aria-labelledby="definition-heading">
+            <div className="row justify-content-center">
+              <div className="col-lg-10">
+                <div className="wfs-card">
+                  <h2 id="definition-heading" className="wfs-section-heading mb-3">
+                    What Is a Wavefront Sensor?
+                  </h2>
+                  <p className="mb-3">
+                    A <strong>wavefront sensor</strong> is an instrument that measures the shape of a light wavefront and
+                    shows how far it departs from an ideal reference. Those departures are optical aberrations, and
+                    measuring them is called <strong>wavefront sensing</strong>. A{' '}
+                    <strong>Shack-Hartmann wavefront sensor</strong>, also known as a{' '}
+                    <strong>Hartmann-Shack sensor</strong> or <strong>wavefront tester</strong> (sometimes written
+                    &ldquo;wave front sensor&rdquo;), does this with a micro-lenslet array and a camera, capturing the whole
+                    wavefront in a single frame.
+                  </p>
+                  <p className="mb-0">
+                    Engineers use a wavefront testing machine of this kind to qualify lenses and objectives, align
+                    lasers, inspect automotive head-up displays, test ophthalmic lenses, and collimate telescopes. Jump
+                    to the <a href="#core-products">instrument lineup</a>, the{' '}
+                    <a href="#master-specifications">specification comparison</a>, or the{' '}
+                    <a href="#technical-faq">technical FAQ</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* ── WORKING PRINCIPLE (EDUCATIONAL DEEP DIVE) ───────────────────── */}
           <section className="mb-5 pb-3" id="working-principle" aria-labelledby="wp-heading">
             <div className="text-center max-w-2xl mx-auto mb-4">
               <span className="wfs-section-tag">Working Principle</span>
               <h2 id="wp-heading" className="wfs-section-heading">
-                Micro-Lenslet Array Discretization &amp; Wavefront Reconstruction
+                How a Shack-Hartmann Wavefront Sensor Works
               </h2>
               <p className="wfs-section-lead mx-auto">
-                How modern Shack-Hartmann sensors measure local phase gradients and reconstruct the complete optical wavefront.
+                Micro-lenslet array discretization &amp; wavefront reconstruction: how modern Shack-Hartmann sensors measure
+                local phase gradients and rebuild the complete optical wavefront.
               </p>
             </div>
 
             <div className="row g-4 align-items-center">
-              
+
               {/* Working Principle Text */}
               <div className="col-lg-7">
                 <div className="wfs-card wfs-card-active">
@@ -327,7 +398,7 @@ export default function WavefrontSensorPage() {
                   <p className="mb-3">
                     Each individual lenslet samples a discrete sub-aperture of the beam. The lateral displacement (Δx, Δy) of each focal spot from its calibrated reference position is directly proportional to the local wavefront slope:
                   </p>
-                  
+
                   <div className="p-3 bg-light rounded-3 mb-3 border">
                     <code className="text-dark fw-bold d-block text-center">
                       θ_x = Δx / f_LA = (1/k) · (∂Φ/∂x)
@@ -335,7 +406,11 @@ export default function WavefrontSensorPage() {
                   </div>
 
                   <p className="mb-0">
-                    Our proprietary <strong>SenSoft™</strong> software integrates these orthogonal phase slopes in real time, expanding the wavefront into orthonormal modal expansions (Standard Zernike, Annular Zernike for central obscurations, Fringe Zernike, and classical Seidel aberrations).
+                    Our proprietary{' '}
+                    <Link href="/all-products/wavefront-sensor-software">
+                      <strong>SenSoft™</strong>
+                    </Link>{' '}
+                    software integrates these orthogonal phase slopes in real time, expanding the wavefront into orthonormal modal expansions (Standard Zernike, Annular Zernike for central obscurations, Fringe Zernike, and classical Seidel aberrations).
                   </p>
                 </div>
               </div>
@@ -344,9 +419,9 @@ export default function WavefrontSensorPage() {
               <div className="col-lg-5">
                 <div className="wfs-card d-flex flex-column align-items-center justify-content-center text-center p-4">
                   <div className="w-100 p-4 rounded-3 border border-2 border-dashed bg-light mb-3 position-relative">
-                    
+
                     <div className="mb-3 text-primary">
-                      <svg width="48" height="48" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                      <svg width="48" height="48" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" role="img" aria-label="Lenslet array diagram icon">
                         <circle cx="12" cy="12" r="9" />
                         <circle cx="12" cy="12" r="3" />
                         <path d="M12 3v-2m0 22v-2m9-9h2m-22 0h2" />
@@ -360,7 +435,8 @@ export default function WavefrontSensorPage() {
                       Sub-aperture spot displacement mapping on detector matrix
                     </p>
 
-                    {/* TODO: Insert Lenslet Array Working GIF/Video here */}
+                    {/* TODO: Insert Lenslet Array Working GIF/Video here.
+                        Use a descriptive alt such as "Shack-Hartmann wavefront sensing principle: lenslet array focal spots" */}
 
                     <span className="badge bg-primary-subtle text-primary border border-primary-subtle mt-3 px-3 py-1">
                       Spot-Displacement Visualization
@@ -376,7 +452,7 @@ export default function WavefrontSensorPage() {
             </div>
           </section>
 
-          {/* ── SECTION 2: THE CORE PRODUCT GRID (TRANSITION TO COMMERCIAL) ─── */}
+          {/* ── SECTION 2: THE CORE PRODUCT GRID ────────────────────────────── */}
           <section className="mb-5 pb-3" id="core-products" aria-labelledby="products-heading">
             <div className="text-center max-w-2xl mx-auto mb-4">
               <span className="wfs-section-tag">Instruments Lineup</span>
@@ -384,7 +460,7 @@ export default function WavefrontSensorPage() {
                 Core Shack-Hartmann Wavefront Sensors
               </h2>
               <p className="wfs-section-lead mx-auto">
-                SpotOptics flagship wavefront sensors engineered in Padova, Italy — from pocket-sized dual-pass units to high-resolution transmission systems.
+                SpotOptics flagship wavefront sensors and wavefront testing instruments, engineered in Padova, Italy — from pocket-sized dual-pass units to high-resolution transmission systems.
               </p>
             </div>
 
@@ -400,12 +476,16 @@ export default function WavefrontSensorPage() {
                 return (
                   <div className="col-12 col-md-6 col-lg-3" key={product.id || index}>
                     <div className="card h-100 shadow-sm border rounded-4 overflow-hidden d-flex flex-column">
-                      
+
                       {/* Product Image */}
                       <div className="bg-light p-3 text-center position-relative" style={{ minHeight: '180px' }}>
                         <Image
                           src={product.image ? `/${product.image.replace(/^\//, '')}` : '/assets/images/products/1.png'}
-                          alt={product.name || 'SpotOptics Wavefront Sensor'}
+                          alt={
+                            product.name
+                              ? `${product.name} – SpotOptics wavefront sensor`
+                              : 'SpotOptics Wavefront Sensor'
+                          }
                           width={240}
                           height={170}
                           sizes="(max-width: 576px) 100vw, (max-width: 991px) 50vw, 240px"
@@ -504,12 +584,42 @@ export default function WavefrontSensorPage() {
             </div>
           </section>
 
-          {/* ── SECTION 4: TECHNICAL SEO FAQ & APPLICATIONS ──────────────────── */}
+          {/* ── NEW SECTION: OPHTHALMIC / IOL TESTING ────────────────────────── */}
+          {/* VERIFY BEFORE PUBLISHING: only keep this section if SpotOptics sensors are
+              actually used for intraocular lens (IOL) testing. Remove it otherwise. */}
+          <section className="mb-5 pb-3" id="ophthalmic-iol-testing" aria-labelledby="iol-heading">
+            <div className="row justify-content-center">
+              <div className="col-lg-10">
+                <div className="wfs-card">
+                  <h2 id="iol-heading" className="wfs-section-heading mb-3">
+                    Shack-Hartmann Sensor for IOL and Ophthalmic Lens Testing
+                  </h2>
+                  <p className="mb-3">
+                    A Shack-Hartmann sensor for IOL testing measures the wavefront transmitted by an intraocular lens
+                    (IOL), contact lens or spectacle lens and reports its aberrations as Zernike coefficients. Because
+                    the measurement is a single snapshot, it suits both laboratory qualification and production-line
+                    inspection of ophthalmic optics.
+                  </p>
+                  <p className="mb-0">
+                    The pocket-size{' '}
+                    <Link href="/all-products/optino-mu-pocket-size-single-and-double-pass">Optino-mu</Link> is the
+                    compact option for lens metrology. See the full{' '}
+                    <Link href="/applications-for-research-and-industry?app=optino-lens-stress-test">
+                      ophthalmic lens testing application
+                    </Link>{' '}
+                    for setups and results.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ── SECTION 4: TECHNICAL FAQ ─────────────────────────────────────── */}
           <section className="mb-5 pb-3" id="technical-faq" aria-labelledby="faq-heading">
             <div className="text-center max-w-2xl mx-auto mb-4">
               <span className="wfs-section-tag">Engineering Knowledge</span>
               <h2 id="faq-heading" className="wfs-section-heading">
-                Technical FAQ &amp; Applications Reference
+                Wavefront Sensor FAQ &amp; Applications Reference
               </h2>
               <p className="wfs-section-lead mx-auto">
                 Authoritative answers synthesized directly from SpotOptics technical validation studies and industrial deployments.
@@ -517,70 +627,21 @@ export default function WavefrontSensorPage() {
             </div>
 
             <div className="max-w-3xl mx-auto">
-              
-              {/* Primary Comparison FAQ */}
-              <details className="wfs-faq-details" open>
-                <summary className="wfs-faq-summary">
-                  <h3 className="h6 fw-bold mb-0 text-dark">
-                    Why Choose Shack-Hartmann over Interferometers?
-                  </h3>
-                  <span className="text-primary fw-bold ms-2">+</span>
-                </summary>
-                <div className="wfs-faq-body">
-                  <p className="mb-2">
-                    Independent cross-validation studies against high-resolution <strong>Zygo GPIxp HR</strong> and <strong>Veeco</strong> Fizeau interferometers demonstrate that SpotOptics Shack-Hartmann sensors achieve spatial phase agreement within <strong>2 nm rms (approx. λ/300)</strong>.
-                  </p>
-                  <p className="mb-0">
-                    Unlike traditional interferometers, which rely on delicate phase-shifting across multiple temporal frames and are severely susceptible to shop-floor vibrations and thermal air currents, SpotOptics Shack-Hartmann instruments operate via single-frame snapshot slope integration. This delivers complete vibration immunity without pneumatic isolation tables, handles large continuous dynamic ranges up to ±50λ, and operates across broadband spectra from 193 nm to 10.6 µm.
-                  </p>
-                </div>
-              </details>
-
-              {/* FAQ 2: Lenslet Array Mechanics */}
-              <details className="wfs-faq-details">
-                <summary className="wfs-faq-summary">
-                  <h3 className="h6 fw-bold mb-0 text-dark">
-                    How does a Shack-Hartmann sensor achieve higher sensitivity than classical Hartmann screens?
-                  </h3>
-                  <span className="text-primary fw-bold ms-2">+</span>
-                </summary>
-                <div className="wfs-faq-body">
-                  <p className="mb-0">
-                    As documented in our technical knowledge base, the classical Hartmann test placed an opaque perforated screen in front of the optic, causing over 95% light loss and diffuse diffraction spots. Shack-Hartmann technology replaces the opaque mask with a continuous micro-lenslet array in the transferred pupil, concentrating light into high-intensity focal spots. This yields higher signal-to-noise ratios, sub-pixel centroiding precision, and λ/1000 rms measurement repeatability.
-                  </p>
-                </div>
-              </details>
-
-              {/* FAQ 3: Automotive & HUD Testing */}
-              <details className="wfs-faq-details">
-                <summary className="wfs-faq-summary">
-                  <h3 className="h6 fw-bold mb-0 text-dark">
-                    How are SpotOptics sensors applied in Head-Up Display (HUD) and automotive quality control?
-                  </h3>
-                  <span className="text-primary fw-bold ms-2">+</span>
-                </summary>
-                <div className="wfs-faq-body">
-                  <p className="mb-0">
-                    SpotOptics developed automated HUD metrology stations for automotive production lines. The OMI wavefront sensor and SenSoft software interface directly with production line controllers via a closed-loop remote communication module, setting acquisition parameters, measuring optical transmission across windshields, and extracting Zernike coefficients to ensure distortion-free projection.
-                  </p>
-                </div>
-              </details>
-
-              {/* FAQ 4: Astronomical Active Optics */}
-              <details className="wfs-faq-details">
-                <summary className="wfs-faq-summary">
-                  <h3 className="h6 fw-bold mb-0 text-dark">
-                    What is SpotOptics heritage in astronomical active optics and telescope mirror testing?
-                  </h3>
-                  <span className="text-primary fw-bold ms-2">+</span>
-                </summary>
-                <div className="wfs-faq-body">
-                  <p className="mb-0">
-                    Shack-Hartmann active optics originated at the ESO 3.5m New Technology Telescope (NTT). SpotOptics instruments such as Puntino apply this astronomical heritage to measure primary mirror support stress and alignment aberrations. Because astronomical telescopes have central obscurations, SenSoft implements Annular Zernike polynomials alongside Standard Zernike and Seidel representations, detecting surface deformations as minute as 268 nm Peak-to-Valley.
-                  </p>
-                </div>
-              </details>
-
+              {faqItems.map((item, index) => (
+                <details className="wfs-faq-details" key={item.q} open={index === 0}>
+                  <summary className="wfs-faq-summary">
+                    <h3 className="h6 fw-bold mb-0 text-dark">{item.q}</h3>
+                    <span className="text-primary fw-bold ms-2">+</span>
+                  </summary>
+                  <div className="wfs-faq-body">
+                    {item.a.map((paragraph, i) => (
+                      <p className={i === item.a.length - 1 ? 'mb-0' : 'mb-2'} key={i}>
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </details>
+              ))}
             </div>
           </section>
 
