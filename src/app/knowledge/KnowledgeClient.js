@@ -212,7 +212,8 @@ export default function KnowledgeClient() {
                                   width={500}
                                   height={260}
                                   className="knowledge-article-img"
-                                  unoptimized
+                                  loading="lazy"
+                                  sizes="(max-width: 768px) 100vw, 300px"
                                 />
                               </div>
                               {article.caption && (
@@ -239,7 +240,8 @@ export default function KnowledgeClient() {
                                           width={240}
                                           height={140}
                                           className="knowledge-article-img"
-                                          unoptimized
+                                          loading="lazy"
+                                          sizes="(max-width: 768px) 45vw, 150px"
                                         />
                                       )}
                                     </div>
@@ -281,7 +283,8 @@ export default function KnowledgeClient() {
                             <Link
                               href={article.url || '#'}
                               className="a-link mt-auto d-inline-flex align-items-center gap-2 text-decoration-none text-uppercase"
-                              aria-label={`Read more about ${article.title}`}
+                              aria-label={`Read technical article: ${article.title}`}
+                              title={article.title}
                             >
                               <span>{article.button_text || 'Read Technical Paper'}</span>
                               <svg

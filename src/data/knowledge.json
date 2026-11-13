@@ -2,7 +2,7 @@
 "page": {
 "title": "Knowledge Corner",
 "description": "SpotOptics is pleased to present information on the principles of their wavefront sensors and wavefront sensor based systems. You can learn more on Zernike polynomials, Shack Hartmann wavefront sensor comparison with interferometers, aberrations and photo gallery on aberrations. FAQ on SH test is also available.",
-"hero_graphic":"assets/images/knowledge/knowladge.png"
+"hero_graphic":"/assets/images/knowledge/knowladge.png"
 
 },
 "articles": [
@@ -12,7 +12,7 @@
   "image": "assets/images/knowledge/hartmann.webp",
   "caption": "Hartmann Screen Test vs Shack-Hartmann Test Setup",
   "description": "In the classical Hartmann test, a screen with holes is placed before the element being tested. The spots corresponding to these holes are recorded on a CCD, before or after the focus. The positions of these spots are mapped back onto the optical element, and the difference between the positions of these spots and the holes of the screen are used to compute the aberrations. This method is mostly obsolete now, as the Shack-Hartmann test has replaced it.",
-  "button_text": "Read More",
+  "button_text": "Compare SH vs. Hartmann",
   "url": "/knowledge/shack-hartmann-vs-hartmann",
   
 
@@ -116,7 +116,7 @@
   "image": "assets/images/knowledge/image_2022-10-19_154624673.png",
   "caption": "Veeco Results vs Optino Results - Contour of Wavefront",
   "description": "SpotOptics Shack-Hartmann wavefront sensors results have been compared with results from the most popular interferometers: Zygo, Veeco, Fisba, and 4D Technology.",
-  "button_text": "Read More",
+  "button_text": "Explore Sensor Accuracy",
   "url": "/knowledge/wavefront-sensor-accuracy",
   "details":{
 "page": {
@@ -267,7 +267,7 @@
     }
   ],
   "description": "Shack-Hartmann image of aspherical lens fl=50mm taken with OMI lenslet array fl=22mm and fl=11mm.",
-  "button_text": "Read More",
+  "button_text": "View Lenslet Specifications",
   "url": "/knowledge/lensletFocalLengthDetail",
 
   "details": {
@@ -377,7 +377,7 @@
   "image": "assets/images/knowledge/Zernike-convention-1.webp",
   "caption": "Zernike polynomials used in Sensoft - our wavefront sensor software",
   "description": "Zernike polynomials represent a particular phase aberration W at a point P on a circular pupil and they are generally expressed in terms of the normalized radius r of the pupil and the azimuthal angle φ, by the following expression: rⁿ cos(mφ + φ₀).",
-  "button_text": "Read More",
+  "button_text": "Explore Zernike Polynomials",
   "url": "/knowledge/zernike-polynomials",
 
   "details": {

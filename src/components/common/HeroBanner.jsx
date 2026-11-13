@@ -59,8 +59,9 @@ export default function HeroBanner({
                 height={imageHeight}
                 className="img-fluid rounded object-fit-contain"
                 style={{ maxHeight: '360px' }}
-                priority
-                unoptimized
+                priority={true}
+                fetchPriority="high"
+                sizes="(max-width: 768px) 100vw, 500px"
               />
             </div>
           </div>
